@@ -1,0 +1,17 @@
+# Never commit secrets or local environment files
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+.dev.vars
+
+# OS / editor clutter
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Local tooling
+node_modules/
+.wrangler/

@@ -11,7 +11,7 @@ This notice explains what personal data MageWorks collects when you visit magewo
 - **Our WhatsApp replies may be written by AI.** Our Enquiry Assistant is an AI assistant. It answers first, and Chee Loung, our founder, personally follows up.
 - We collect what you send us (such as your phone number, WhatsApp profile name, name, company and what you need help with) plus basic technical data.
 - We use it to answer your enquiry, follow up and arrange a call. We never sell it, and we don't send marketing messages unless you've said yes.
-- A few trusted providers handle it for us: Meta (WhatsApp), Anthropic (AI replies), Google (our enquiry log), Cal.com (booking calls) and our hosting provider. Some of them are outside Malaysia.
+- A few trusted providers handle it for us: Meta (WhatsApp), Anthropic (AI replies), Google (our email and enquiry log), Web3Forms (our website form) and our hosting providers. Some of them are outside Malaysia.
 - You can ask to see, correct or delete your data at any time. To delete it, message **"delete my data"** on WhatsApp or email **info@mageworks.ai**. [See how](#delete-your-data).
 
 ## 1. Who we are
@@ -35,7 +35,7 @@ This notice covers:
 - people who visit our website;
 - people who message our WhatsApp business number, including conversations with our **Enquiry Assistant** (the WhatsApp integration registered with Meta as the app "MageWorksConnector");
 - people who contact us through our enquiry form or by email; and
-- people who book a call with us or sign up to hear from us.
+- people who arrange a call with us or sign up to hear from us.
 
 It does **not** cover data we handle while working on a client's project, including data processed by digital employees we build or host for a client. That work is governed by our written agreement with the client. If you are a customer or employee of one of our clients, please read that client's own privacy notice.
 
@@ -46,7 +46,7 @@ When you message MageWorks on WhatsApp, **the first replies you receive may be g
 1. Your message reaches us through Meta's WhatsApp Business Platform.
 2. Our system, run on a cloud hosting provider, sends the conversation to Anthropic, whose AI model writes a reply. The reply is sent back to you on WhatsApp.
 3. The assistant may ask a few simple questions (such as your name, company, industry and what you need help with) and save the key details in our enquiry log in Google Sheets.
-4. If it makes sense, the assistant can offer you a time to talk, booked through Cal.com.
+4. If it makes sense, the assistant can suggest a call, and we'll get in touch to agree a time.
 5. **Chee Loung reads every enquiry and follows up personally**, usually within one working day during our working hours (Monday to Friday, Malaysia business hours).
 
 Please keep in mind:
@@ -69,8 +69,6 @@ Please keep in mind:
 **When you fill in our enquiry form**, we collect your name, business name, email address and your answer to "What's eating your week?". Your name, email address and message are required: without them we can't reply. Your business name is optional.
 
 **When you email us**, we receive your email address, your name, anything in your email signature and the content of your email and attachments.
-
-**When you book a call** through Cal.com, we collect your name, email address, the time you choose and any notes you add.
 
 **When you visit our website**, our website host, Cloudflare (see section 12), automatically receives technical data such as your IP address, browser and device type, the page you requested and the time of your visit. We do not use this to identify you.
 
@@ -106,13 +104,11 @@ We use the following service providers ("data processors") to run our enquiry ha
 |---|---|---|---|
 | **Meta** (WhatsApp Business Platform) | Delivers WhatsApp messages between you and our Enquiry Assistant | Meta data centres, which may be outside Malaysia | Meta says that, for the Cloud API, it acts as a data processor for the business and keeps messages for at most 30 days. WhatsApp also handles your WhatsApp account under its own [Privacy Policy](https://www.whatsapp.com/legal/privacy-policy). See also the [WhatsApp Business Data Processing Terms](https://www.whatsapp.com/legal/business-data-processing-terms) and [Cloud API data privacy & security](https://developers.facebook.com/documentation/business-messaging/whatsapp/data-privacy-and-security). |
 | **Anthropic** (Claude API) | Generates the Enquiry Assistant's replies from the conversation | United States | Under Anthropic's published policies for commercial API customers, inputs and outputs are not used to train its models by default, and are deleted from Anthropic's systems within 30 days, unless a longer period applies (for example, if content is flagged for a usage-policy review, or where the law requires). See Anthropic's [Privacy Center](https://privacy.claude.com). |
-| **Google** (Google Workspace, e.g. Google Sheets) | Stores our enquiry log | Google data centres, which may be outside Malaysia | [Google Workspace Data Processing Terms](https://workspace.google.com/terms/dpa_terms.html) |
-| **Cal.com** | Lets you book a call with us | United States | Cal.com acts as a processor for bookings made through our booking link. [Cal.com Privacy Policy](https://cal.com/privacy) and [DPA](https://cal.com/dpa) |
+| **Google** (Google Workspace: Gmail and Google Sheets) | Hosts our email, including info@mageworks.ai, and stores our enquiry log | Google data centres, which may be outside Malaysia | [Google Workspace Data Processing Terms](https://workspace.google.com/terms/dpa_terms.html) |
 | **Our cloud hosting provider** | Hosts the system that connects WhatsApp, the AI model and our enquiry log | May be outside Malaysia | We'll tell you which provider on request. |
-| **Cloudflare** | Hosts our website, protects it from attacks, and forwards emails sent to info@mageworks.ai to our inbox | Global network; Cloudflare is based in the United States | [Cloudflare Privacy Policy](https://www.cloudflare.com/privacypolicy/) |
-| **Web3Forms** | Receives the details you submit in our enquiry form and emails them to us | Outside Malaysia | [Web3Forms Privacy Policy](https://web3forms.com/privacy) |
+| **Cloudflare** | Hosts our website and protects it from attacks | Global network; Cloudflare is based in the United States | [Cloudflare Privacy Policy](https://www.cloudflare.com/privacypolicy/) |
+| **Web3Forms** | Receives the details you submit in our enquiry form, emails them to us, and keeps a copy for 30 days | Outside Malaysia | [Web3Forms Privacy Policy](https://web3forms.com/privacy) |
 | **hCaptcha** (Intuit) | Checks that a form submission comes from a person, not a spam bot. It receives technical data such as your IP address and browser details | United States | [hCaptcha Privacy Policy](https://www.hcaptcha.com/privacy) |
-| **Our email provider** | Stores the emails we send and receive | May be outside Malaysia | We'll tell you which provider on request. |
 
 We also share personal data, only where needed, with:
 
@@ -132,11 +128,10 @@ We keep personal data only as long as we need it:
 
 - **Enquiries and leads with no further engagement** (WhatsApp, form or email): deleted 12 months after our last contact with you.
 - **Enquiry Assistant conversation records on our own system:** deleted after 90 days. The key details are kept in our enquiry log as above.
-- **Copies held by our providers:** Meta keeps Cloud API messages for at most 30 days, and Anthropic deletes API inputs and outputs within 30 days by default (see section 6).
-- **Cal.com bookings:** deleted 12 months after the call, unless you become a client.
+- **Copies held by our providers:** Meta keeps Cloud API messages for at most 30 days, Anthropic deletes API inputs and outputs within 30 days by default (see section 6), and Web3Forms keeps a copy of form submissions for 30 days.
 - **Clients:** for the duration of our work together, then for up to 7 years to meet tax and accounting record-keeping requirements.
 - **Marketing list:** until you unsubscribe. We keep a minimal record that you unsubscribed so we don't contact you again.
-- **Website technical data:** as long as our hosting provider and Google keep it under their own policies.
+- **Website technical data:** as long as Cloudflare and hCaptcha keep it under their own policies.
 
 ## 9. Keeping your data safe
 
@@ -171,8 +166,8 @@ You can ask us to delete the personal data we hold about you at any time, in eit
 **What happens next:**
 
 1. We confirm we've received your request within 3 working days. If we can't tell that the request comes from you, we may ask you to confirm it from the same phone number or email address.
-2. Within 30 days, we delete your details from our enquiry log, our Enquiry Assistant conversation records, our emails, and any Cal.com bookings, and we tell you when it's done.
-3. Copies held by our providers are removed under their own retention rules: Meta keeps Cloud API messages for at most 30 days, and Anthropic deletes API data within 30 days by default.
+2. Within 30 days, we delete your details from our enquiry log, our Enquiry Assistant conversation records and our emails, and we tell you when it's done.
+3. Copies held by our providers are removed under their own retention rules: Meta keeps Cloud API messages for at most 30 days, Anthropic deletes API data within 30 days by default, and Web3Forms deletes form submissions after 30 days.
 
 **What we may keep:** a minimal record that you asked us to delete your data and not to contact you again, and any records we must keep by law (for example, invoices if you were a client). We'll tell you if anything is kept and why.
 

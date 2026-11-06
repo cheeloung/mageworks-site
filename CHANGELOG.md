@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-11-06: Privacy notice provider updates
+- Removed Cal.com (not in use for now): provider table, booking section, retention and deletion steps; the assistant now "suggests a call" and we arrange the time.
+- Email: Google Workspace (Gmail) now named as our email host, including info@mageworks.ai; the generic "our email provider" row and Cloudflare email forwarding mention removed.
+- Web3Forms: now states it keeps a copy of form submissions for 30 days (retention and deletion sections updated).
+- Website technical data: held by Cloudflare and hCaptcha (Google reference removed).
+
 ## 2026-11-06: Security and performance review fixes
 - Performance: the hero animation pauses when it's off screen (it was redrawing constantly) and runs at about 20 fps; the mountain only rebuilds when the size actually changes.
 - Privacy/security: hCaptcha now loads from hCaptcha directly (no web3forms.com script) and only when the visitor nears the form, so most page views contact no third party.

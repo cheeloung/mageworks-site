@@ -11,7 +11,7 @@ Notis ini menerangkan data peribadi yang dikumpul oleh MageWorks apabila anda me
 - **Balasan WhatsApp kami mungkin ditulis oleh AI.** Pembantu Pertanyaan (Enquiry Assistant) kami ialah pembantu AI. Ia menjawab dahulu, dan Chee Loung, pengasas kami, akan membuat susulan sendiri.
 - Kami mengumpul apa yang anda hantar kepada kami (seperti nombor telefon, nama profil WhatsApp, nama, syarikat dan perkara yang anda perlukan bantuan) serta data teknikal asas.
 - Kami menggunakannya untuk menjawab pertanyaan anda, membuat susulan dan mengatur panggilan. Kami tidak sekali-kali menjualnya, dan kami tidak menghantar mesej pemasaran melainkan anda bersetuju.
-- Beberapa penyedia yang dipercayai mengendalikannya bagi pihak kami: Meta (WhatsApp), Anthropic (balasan AI), Google (log pertanyaan kami), Cal.com (tempahan panggilan) dan penyedia hos kami. Sesetengahnya berada di luar Malaysia.
+- Beberapa penyedia yang dipercayai mengendalikannya bagi pihak kami: Meta (WhatsApp), Anthropic (balasan AI), Google (e-mel dan log pertanyaan kami), Web3Forms (borang laman web kami) dan penyedia hos kami. Sesetengahnya berada di luar Malaysia.
 - Anda boleh meminta untuk melihat, membetulkan atau memadam data anda pada bila-bila masa. Untuk memadamnya, hantar mesej **"delete my data"** di WhatsApp atau e-mel ke **info@mageworks.ai**. [Lihat caranya](#padam-data-anda).
 
 ## 1. Siapa kami
@@ -35,7 +35,7 @@ Notis ini meliputi:
 - individu yang melawat laman web kami;
 - individu yang menghantar mesej ke nombor WhatsApp perniagaan kami, termasuk perbualan dengan **Pembantu Pertanyaan** kami (integrasi WhatsApp yang didaftarkan dengan Meta sebagai aplikasi "MageWorksConnector");
 - individu yang menghubungi kami melalui borang pertanyaan atau e-mel; dan
-- individu yang menempah panggilan dengan kami atau mendaftar untuk menerima berita daripada kami.
+- individu yang mengatur panggilan dengan kami atau mendaftar untuk menerima berita daripada kami.
 
 Notis ini **tidak** meliputi data yang kami kendalikan semasa menjalankan projek untuk pelanggan, termasuk data yang diproses oleh pekerja digital yang kami bina atau hoskan untuk pelanggan. Kerja tersebut tertakluk kepada perjanjian bertulis antara kami dengan pelanggan. Jika anda pelanggan atau pekerja kepada salah seorang pelanggan kami, sila rujuk notis privasi pelanggan tersebut.
 
@@ -46,7 +46,7 @@ Apabila anda menghantar mesej kepada MageWorks di WhatsApp, **balasan pertama ya
 1. Mesej anda sampai kepada kami melalui WhatsApp Business Platform milik Meta.
 2. Sistem kami, yang dihoskan oleh penyedia hos awan, menghantar perbualan tersebut kepada Anthropic, yang model AInya menulis balasan. Balasan itu dihantar semula kepada anda di WhatsApp.
 3. Pembantu ini mungkin bertanya beberapa soalan mudah (seperti nama, syarikat, industri anda dan perkara yang anda perlukan bantuan) dan menyimpan butiran penting dalam log pertanyaan kami di Google Sheets.
-4. Jika sesuai, pembantu ini boleh menawarkan masa untuk berbincang, yang ditempah melalui Cal.com.
+4. Jika sesuai, pembantu ini boleh mencadangkan panggilan, dan kami akan menghubungi anda untuk menetapkan masa.
 5. **Chee Loung membaca setiap pertanyaan dan membuat susulan sendiri**, biasanya dalam tempoh satu hari bekerja dalam waktu bekerja kami (Isnin hingga Jumaat, waktu pejabat Malaysia).
 
 Sila ambil perhatian:
@@ -69,8 +69,6 @@ Sila ambil perhatian:
 **Apabila anda mengisi borang pertanyaan kami**, kami mengumpul nama, nama perniagaan, alamat e-mel dan jawapan anda kepada soalan "What's eating your week?" (Apa yang menghabiskan masa anda setiap minggu?). Nama, alamat e-mel dan mesej anda adalah wajib: tanpa maklumat ini, kami tidak dapat membalas anda. Nama perniagaan adalah pilihan.
 
 **Apabila anda menghantar e-mel kepada kami**, kami menerima alamat e-mel, nama anda, apa-apa maklumat dalam tandatangan e-mel anda, serta kandungan e-mel dan lampirannya.
-
-**Apabila anda menempah panggilan** melalui Cal.com, kami mengumpul nama, alamat e-mel anda, masa yang anda pilih dan sebarang catatan yang anda tambah.
 
 **Apabila anda melawat laman web kami**, hos laman web kami, Cloudflare (lihat seksyen 12), menerima data teknikal secara automatik seperti alamat IP anda, jenis pelayar dan peranti, halaman yang anda minta dan masa lawatan anda. Kami tidak menggunakan data ini untuk mengenal pasti anda.
 
@@ -106,13 +104,11 @@ Kami menggunakan penyedia perkhidmatan berikut ("pemproses data") untuk mengenda
 |---|---|---|---|
 | **Meta** (WhatsApp Business Platform) | Menghantar mesej WhatsApp antara anda dan Pembantu Pertanyaan kami | Pusat data Meta, yang mungkin di luar Malaysia | Menurut Meta, bagi Cloud API, Meta bertindak sebagai pemproses data untuk perniagaan dan menyimpan mesej selama maksimum 30 hari. WhatsApp juga mengendalikan akaun WhatsApp anda di bawah [Dasar Privasinya](https://www.whatsapp.com/legal/privacy-policy?lang=ms) sendiri. Lihat juga [Terma Pemprosesan Data WhatsApp Business](https://www.whatsapp.com/legal/business-data-processing-terms?lang=ms) dan [privasi & keselamatan data Cloud API](https://developers.facebook.com/documentation/business-messaging/whatsapp/data-privacy-and-security). |
 | **Anthropic** (Claude API) | Menjana balasan Pembantu Pertanyaan berdasarkan perbualan | Amerika Syarikat | Menurut dasar yang diterbitkan oleh Anthropic bagi pelanggan API komersial, input dan output tidak digunakan untuk melatih modelnya secara lalai, dan dipadam daripada sistem Anthropic dalam tempoh 30 hari, melainkan tempoh yang lebih lama terpakai (contohnya, jika kandungan ditandakan untuk semakan dasar penggunaan, atau jika dikehendaki oleh undang-undang). Lihat [Pusat Privasi](https://privacy.claude.com) Anthropic. |
-| **Google** (Google Workspace, cth. Google Sheets) | Menyimpan log pertanyaan kami | Pusat data Google, yang mungkin di luar Malaysia | [Terma Pemprosesan Data Google Workspace](https://workspace.google.com/terms/dpa_terms.html) |
-| **Cal.com** | Membolehkan anda menempah panggilan dengan kami | Amerika Syarikat | Cal.com bertindak sebagai pemproses bagi tempahan yang dibuat melalui pautan tempahan kami. [Dasar Privasi Cal.com](https://cal.com/privacy) dan [DPA](https://cal.com/dpa) |
+| **Google** (Google Workspace: Gmail dan Google Sheets) | Mengehoskan e-mel kami, termasuk info@mageworks.ai, dan menyimpan log pertanyaan kami | Pusat data Google, yang mungkin di luar Malaysia | [Terma Pemprosesan Data Google Workspace](https://workspace.google.com/terms/dpa_terms.html) |
 | **Penyedia hos awan kami** | Mengehoskan sistem yang menghubungkan WhatsApp, model AI dan log pertanyaan kami | Mungkin di luar Malaysia | Kami akan memaklumkan nama penyedia atas permintaan. |
-| **Cloudflare** | Mengehoskan laman web kami, melindunginya daripada serangan, dan memajukan e-mel yang dihantar ke info@mageworks.ai ke peti masuk kami | Rangkaian global; Cloudflare berpangkalan di Amerika Syarikat | [Dasar Privasi Cloudflare](https://www.cloudflare.com/privacypolicy/) |
-| **Web3Forms** | Menerima butiran yang anda hantar melalui borang pertanyaan kami dan menghantarnya kepada kami melalui e-mel | Di luar Malaysia | [Dasar Privasi Web3Forms](https://web3forms.com/privacy) |
+| **Cloudflare** | Mengehoskan laman web kami dan melindunginya daripada serangan | Rangkaian global; Cloudflare berpangkalan di Amerika Syarikat | [Dasar Privasi Cloudflare](https://www.cloudflare.com/privacypolicy/) |
+| **Web3Forms** | Menerima butiran yang anda hantar melalui borang pertanyaan kami, menghantarnya kepada kami melalui e-mel, dan menyimpan salinan selama 30 hari | Di luar Malaysia | [Dasar Privasi Web3Forms](https://web3forms.com/privacy) |
 | **hCaptcha** (Intuit) | Memastikan penghantaran borang dibuat oleh manusia, bukan bot spam. Ia menerima data teknikal seperti alamat IP dan butiran pelayar anda | Amerika Syarikat | [Dasar Privasi hCaptcha](https://www.hcaptcha.com/privacy) |
-| **Penyedia e-mel kami** | Menyimpan e-mel yang kami hantar dan terima | Mungkin di luar Malaysia | Kami akan memaklumkan nama penyedia atas permintaan. |
 
 Kami juga berkongsi data peribadi, hanya apabila perlu, dengan:
 
@@ -132,11 +128,10 @@ Kami menyimpan data peribadi hanya selama yang diperlukan:
 
 - **Pertanyaan dan petunjuk (leads) tanpa sebarang tindakan lanjut** (WhatsApp, borang atau e-mel): dipadam 12 bulan selepas hubungan terakhir kami dengan anda.
 - **Rekod perbualan Pembantu Pertanyaan dalam sistem kami sendiri:** dipadam selepas 90 hari. Butiran penting disimpan dalam log pertanyaan kami seperti di atas.
-- **Salinan yang disimpan oleh penyedia kami:** Meta menyimpan mesej Cloud API selama maksimum 30 hari, dan Anthropic memadam input dan output API dalam tempoh 30 hari secara lalai (lihat seksyen 6).
-- **Tempahan Cal.com:** dipadam 12 bulan selepas panggilan, melainkan anda menjadi pelanggan.
+- **Salinan yang disimpan oleh penyedia kami:** Meta menyimpan mesej Cloud API selama maksimum 30 hari, Anthropic memadam input dan output API dalam tempoh 30 hari secara lalai (lihat seksyen 6), dan Web3Forms menyimpan salinan penghantaran borang selama 30 hari.
 - **Pelanggan:** sepanjang tempoh kerjasama kita, dan selepas itu sehingga 7 tahun untuk memenuhi keperluan penyimpanan rekod cukai dan perakaunan.
 - **Senarai pemasaran:** sehingga anda berhenti melanggan. Kami menyimpan rekod minimum bahawa anda telah berhenti melanggan supaya kami tidak menghubungi anda lagi.
-- **Data teknikal laman web:** selama penyedia hos kami dan Google menyimpannya di bawah dasar mereka sendiri.
+- **Data teknikal laman web:** selama Cloudflare dan hCaptcha menyimpannya di bawah dasar mereka sendiri.
 
 ## 9. Menjaga keselamatan data anda
 
@@ -171,8 +166,8 @@ Anda boleh meminta kami memadam data peribadi yang kami simpan tentang anda pada
 **Apa yang berlaku seterusnya:**
 
 1. Kami mengesahkan penerimaan permintaan anda dalam tempoh 3 hari bekerja. Jika kami tidak dapat memastikan permintaan itu datang daripada anda, kami mungkin meminta anda mengesahkannya daripada nombor telefon atau alamat e-mel yang sama.
-2. Dalam tempoh 30 hari, kami memadam butiran anda daripada log pertanyaan kami, rekod perbualan Pembantu Pertanyaan, e-mel kami dan sebarang tempahan Cal.com, dan kami memaklumkan anda apabila selesai.
-3. Salinan yang disimpan oleh penyedia kami dipadam mengikut peraturan penyimpanan mereka sendiri: Meta menyimpan mesej Cloud API selama maksimum 30 hari, dan Anthropic memadam data API dalam tempoh 30 hari secara lalai.
+2. Dalam tempoh 30 hari, kami memadam butiran anda daripada log pertanyaan kami, rekod perbualan Pembantu Pertanyaan dan e-mel kami, dan kami memaklumkan anda apabila selesai.
+3. Salinan yang disimpan oleh penyedia kami dipadam mengikut peraturan penyimpanan mereka sendiri: Meta menyimpan mesej Cloud API selama maksimum 30 hari, Anthropic memadam data API dalam tempoh 30 hari secara lalai, dan Web3Forms memadam penghantaran borang selepas 30 hari.
 
 **Apa yang mungkin kami simpan:** rekod minimum bahawa anda telah meminta kami memadam data anda dan tidak menghubungi anda lagi, serta apa-apa rekod yang wajib kami simpan menurut undang-undang (contohnya, invois jika anda pernah menjadi pelanggan). Kami akan memaklumkan anda jika ada apa-apa yang disimpan dan sebabnya.
 

@@ -1,0 +1,631 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Notice | MageWorks</title>
+<meta name="description" content="How MageWorks AI Solutions handles personal data from website visitors, enquiries and our WhatsApp AI Enquiry Assistant, and how to delete your data.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://mageworks.ai/privacy">
+<link rel="alternate" hreflang="en" href="https://mageworks.ai/privacy">
+<link rel="alternate" hreflang="ms" href="https://mageworks.ai/privacy#bm">
+<link rel="stylesheet" href="/assets/fonts/fonts.css">
+<link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/img/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+<style>
+:root {
+  --cream: #fbf6ef;
+  --ink: #2d2533;
+  --muted: #5d5266;
+  --accent: #c7655a;
+  --accent-ink: #a64b41;
+  --line: #e6ddd3;
+  --card: #fffaf4;
+  --ph: #f6e1d6;
+  --serif: "Fraunces", Georgia, "Times New Roman", serif;
+  --sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body {
+  margin: 0; background: var(--cream); color: var(--ink);
+  font: 400 1.0625rem/1.7 var(--sans);
+}
+a { color: var(--accent-ink); text-underline-offset: 3px; text-decoration-thickness: 1px; }
+a:hover { color: var(--ink); }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 3px; }
+.skip { position: absolute; left: -9999px; top: 0; }
+.skip:focus { left: 16px; top: 12px; background: var(--ink); color: var(--cream); padding: 8px 14px; z-index: 10; }
+
+.topbar { border-bottom: 1px solid var(--line); background: var(--cream); position: sticky; top: 0; z-index: 5; }
+.topbar-inner { max-width: 760px; margin: 0 auto; padding: 14px 24px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.brand { display: inline-flex; align-items: center; gap: 10px; color: var(--ink); text-decoration: none; font: 600 1.125rem/1 var(--serif); letter-spacing: -0.01em; }
+.brand svg { color: var(--accent); flex: none; }
+.lang { display: flex; gap: 4px; font-size: 0.875rem; font-weight: 500; }
+.lang a { white-space: nowrap; text-decoration: none; color: var(--muted); padding: 6px 10px; border-radius: 999px; border: 1px solid transparent; }
+.lang a:hover { color: var(--ink); border-color: var(--line); }
+.lang a.on { color: var(--ink); border-color: var(--ink); }
+body:has(#bm:target) .lang a.on, body:has(#bm :target) .lang a.on { color: var(--muted); border-color: transparent; }
+body:has(#bm:target) .lang a[href="#bm"], body:has(#bm :target) .lang a[href="#bm"] { color: var(--ink); border-color: var(--ink); }
+
+main { max-width: 760px; margin: 0 auto; padding: 56px 24px 80px; }
+.notice { display: block; scroll-margin-top: 100px; }
+.short { display: none; }
+@media (max-width: 480px) { .long { display: none; } .short { display: inline; } }
+#bm { display: none; }
+#bm:target, #bm:has(:target) { display: block; }
+#bm:target ~ #en { display: none; }
+body:has(#bm :target) #en { display: none; }
+
+.doc-head { margin-bottom: 32px; }
+h1 { font: 600 clamp(2.25rem, 6vw, 3.25rem)/1.1 var(--serif); letter-spacing: -0.02em; margin: 0 0 12px; }
+.updated { color: var(--muted); font-size: 0.9375rem; margin: 0; }
+h2 { font: 600 1.625rem/1.25 var(--serif); letter-spacing: -0.01em; margin: 56px 0 16px; padding-top: 24px; border-top: 1px solid var(--line); scroll-margin-top: 80px; }
+h3 { font: 600 1.125rem/1.4 var(--sans); margin: 28px 0 8px; }
+p, ul, ol { margin: 0 0 16px; }
+ul, ol { padding-left: 1.3em; }
+li { margin-bottom: 8px; }
+li::marker { color: var(--accent); }
+strong { font-weight: 600; }
+
+.summary { background: var(--card); border: 1px solid var(--line); border-left: 4px solid var(--accent); border-radius: 14px; padding: 4px 28px 12px; margin: 32px 0 8px; }
+.summary h2 { border-top: 0; margin-top: 20px; padding-top: 0; font-size: 1.375rem; }
+.summary li:first-child { font-size: 1.0625rem; }
+
+h2#delete-your-data, h2#padam-data-anda { color: var(--ink); }
+h2#delete-your-data::before, h2#padam-data-anda::before { content: ""; display: block; width: 40px; height: 3px; background: var(--accent); margin-bottom: 16px; border-radius: 2px; }
+
+.toc { border: 1px solid var(--line); border-radius: 12px; padding: 12px 20px; margin: 24px 0 28px; background: transparent; }
+.toc summary { cursor: pointer; font-weight: 600; color: var(--ink); }
+.toc ol { margin: 12px 0 4px; columns: 2 240px; column-gap: 32px; font-size: 0.9375rem; }
+.toc li { break-inside: avoid; margin-bottom: 6px; }
+.toc a { color: var(--muted); text-decoration: none; }
+.toc a:hover { color: var(--ink); text-decoration: underline; }
+
+.table-wrap { overflow-x: auto; margin: 0 0 20px; border: 1px solid var(--line); border-radius: 12px; background: var(--card); }
+table { border-collapse: collapse; width: 100%; min-width: 600px; font-size: 0.9375rem; line-height: 1.55; }
+th, td { text-align: left; vertical-align: top; padding: 12px 16px; border-bottom: 1px solid var(--line); }
+th { font-weight: 600; background: #f5ede3; }
+tr:last-child td { border-bottom: 0; }
+
+.ph { background: var(--ph); color: var(--ink); border-radius: 4px; padding: 0 4px; font-size: 0.92em; box-decoration-break: clone; -webkit-box-decoration-break: clone; }
+
+.site-foot { border-top: 1px solid var(--line); }
+.site-foot-inner { max-width: 760px; margin: 0 auto; padding: 24px; color: var(--muted); font-size: 0.875rem; display: flex; flex-wrap: wrap; gap: 8px 24px; justify-content: space-between; }
+.site-foot a { color: var(--muted); }
+
+@media (max-width: 600px) {
+  body { font-size: 1rem; }
+  .topbar-inner { padding: 12px 16px; }
+  main { padding: 36px 16px 64px; }
+  .summary { padding: 2px 18px 8px; }
+  h2 { margin-top: 44px; }
+  .site-foot-inner { padding: 20px 16px; }
+}
+@media print {
+  .topbar { position: static; }
+  .lang, .toc, .skip { display: none; }
+  #bm { display: block; break-before: page; }
+  #bm:target ~ #en { display: block; }
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="/" aria-label="mageworks.ai home">
+      <svg viewBox="0 0 104 40" width="44" height="17" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"><path d="M2 38 L13 4 L24 26 L35 4 L46 38"/><path d="M58 2 L69 36 L80 14 L91 36 L102 2"/></g></svg>
+      <span>mageworks.ai</span>
+    </a>
+    <nav class="lang" aria-label="Language / Bahasa">
+      <a class="on" href="#en" hreflang="en" lang="en" aria-label="English"><span class="long">English</span><span class="short" aria-hidden="true">EN</span></a>
+      <a href="#bm" hreflang="ms" lang="ms" aria-label="Bahasa Malaysia"><span class="long">Bahasa Malaysia</span><span class="short" aria-hidden="true">BM</span></a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+<article id="bm" class="notice" lang="ms" aria-label="Notis Privasi (Bahasa Malaysia)">
+<header class="doc-head"><h1>Notis Privasi</h1><p class="updated"><strong>Kemas kini terakhir: 6 November 2026</strong></p></header><details class="toc"><summary>Kandungan</summary><ol><li><a href="#bm-ringkasannya">Ringkasannya</a></li><li><a href="#bm-siapa-kami">1. Siapa kami</a></li><li><a href="#bm-skop-notis-ini">2. Skop notis ini</a></li><li><a href="#bm-berbual-dengan-pembantu-pertanyaan-ai-kami">3. Berbual dengan Pembantu Pertanyaan AI kami</a></li><li><a href="#bm-data-yang-kami-kumpul-dan-caranya">4. Data yang kami kumpul dan caranya</a></li><li><a href="#bm-sebab-kami-menggunakan-data-anda-dan-asasnya">5. Sebab kami menggunakan data anda, dan asasnya</a></li><li><a href="#bm-pihak-yang-mengendalikan-data-anda-bagi-pihak-kami">6. Pihak yang mengendalikan data anda bagi pihak kami</a></li><li><a href="#bm-pemindahan-ke-luar-negara">7. Pemindahan ke luar negara</a></li><li><a href="#bm-tempoh-kami-menyimpan-data">8. Tempoh kami menyimpan data</a></li><li><a href="#bm-menjaga-keselamatan-data-anda">9. Menjaga keselamatan data anda</a></li><li><a href="#bm-hak-anda">10. Hak anda</a></li><li><a href="#padam-data-anda">11. Cara memadam data anda</a></li><li><a href="#bm-kuki-fon-dan-analitik">12. Kuki, fon dan analitik</a></li><li><a href="#bm-kanak-kanak">13. Kanak-kanak</a></li><li><a href="#bm-perubahan-kepada-notis-ini">14. Perubahan kepada notis ini</a></li><li><a href="#bm-hubungi-kami">15. Hubungi kami</a></li></ol></details>
+<p>Notis ini menerangkan data peribadi yang dikumpul oleh MageWorks apabila anda melawat mageworks.ai, menghantar mesej kepada kami di WhatsApp, mengisi borang pertanyaan atau menghantar e-mel kepada kami; sebab kami mengumpulnya; pihak yang mengendalikannya bagi pihak kami; serta pilihan dan hak anda. Notis ini diterbitkan dalam Bahasa Malaysia dan Bahasa Inggeris. Jika terdapat sebarang percanggahan antara kedua-dua versi, versi Bahasa Inggeris akan diguna pakai.</p>
+<section class="summary" aria-labelledby="bm-ringkasannya"><h2 id="bm-ringkasannya">Ringkasannya</h2>
+<ul>
+<li><strong>Balasan WhatsApp kami mungkin ditulis oleh AI.</strong> Pembantu Pertanyaan (Enquiry Assistant) kami ialah pembantu AI. Ia menjawab dahulu, dan Chee Loung, pengasas kami, akan membuat susulan sendiri.</li>
+<li>Kami mengumpul apa yang anda hantar kepada kami (seperti nombor telefon, nama profil WhatsApp, nama, syarikat dan perkara yang anda perlukan bantuan) serta data teknikal asas.</li>
+<li>Kami menggunakannya untuk menjawab pertanyaan anda, membuat susulan dan mengatur panggilan. Kami tidak sekali-kali menjualnya, dan kami tidak menghantar mesej pemasaran melainkan anda bersetuju.</li>
+<li>Beberapa penyedia yang dipercayai mengendalikannya bagi pihak kami: Meta (WhatsApp), Anthropic (balasan AI), Google (log pertanyaan kami), Cal.com (tempahan panggilan) dan penyedia hos kami. Sesetengahnya berada di luar Malaysia.</li>
+<li>Anda boleh meminta untuk melihat, membetulkan atau memadam data anda pada bila-bila masa. Untuk memadamnya, hantar mesej <strong>"delete my data"</strong> di WhatsApp atau e-mel ke <strong>info@mageworks.ai</strong>. <a href="#padam-data-anda">Lihat caranya</a>.</li>
+</ul></section>
+<h2 id="bm-siapa-kami">1. Siapa kami</h2>
+<p>MageWorks ialah sebuah perunding AI bebas yang berpangkalan di Malaysia, diasaskan oleh Chee Loung. Kami membantu perniagaan menentukan di mana AI benar-benar berguna, membina automasi dan pekerja digital, mengendalikan bengkel AI dan menyokong apa yang kami bina.</p>
+<p>Perniagaan yang bertanggungjawab ke atas data peribadi anda ("pengawal data") ialah:</p>
+<p><strong>MageWorks AI Solutions</strong><br />
+No. pendaftaran: dalam proses pendaftaran<br />
+Alamat: Malaysia (alamat penuh perniagaan akan dikemas kini setelah pendaftaran selesai)<br />
+E-mel: info@mageworks.ai<br />
+Pegawai perhubungan perlindungan data: Chee Loung, Pengasas (info@mageworks.ai)</p>
+<p>Dalam notis ini, "MageWorks", "kami" dan "milik kami" bermaksud MageWorks AI Solutions.</p>
+<h2 id="bm-skop-notis-ini">2. Skop notis ini</h2>
+<p>Notis ini meliputi:</p>
+<ul>
+<li>individu yang melawat laman web kami;</li>
+<li>individu yang menghantar mesej ke nombor WhatsApp perniagaan kami, termasuk perbualan dengan <strong>Pembantu Pertanyaan</strong> kami (integrasi WhatsApp yang didaftarkan dengan Meta sebagai aplikasi "MageWorksConnector");</li>
+<li>individu yang menghubungi kami melalui borang pertanyaan atau e-mel; dan</li>
+<li>individu yang menempah panggilan dengan kami atau mendaftar untuk menerima berita daripada kami.</li>
+</ul>
+<p>Notis ini <strong>tidak</strong> meliputi data yang kami kendalikan semasa menjalankan projek untuk pelanggan, termasuk data yang diproses oleh pekerja digital yang kami bina atau hoskan untuk pelanggan. Kerja tersebut tertakluk kepada perjanjian bertulis antara kami dengan pelanggan. Jika anda pelanggan atau pekerja kepada salah seorang pelanggan kami, sila rujuk notis privasi pelanggan tersebut.</p>
+<h2 id="bm-berbual-dengan-pembantu-pertanyaan-ai-kami">3. Berbual dengan Pembantu Pertanyaan AI kami</h2>
+<p>Apabila anda menghantar mesej kepada MageWorks di WhatsApp, <strong>balasan pertama yang anda terima mungkin dijana oleh AI, bukan ditaip oleh manusia.</strong> Begini cara ia berfungsi:</p>
+<ol>
+<li>Mesej anda sampai kepada kami melalui WhatsApp Business Platform milik Meta.</li>
+<li>Sistem kami, yang dihoskan oleh penyedia hos awan, menghantar perbualan tersebut kepada Anthropic, yang model AInya menulis balasan. Balasan itu dihantar semula kepada anda di WhatsApp.</li>
+<li>Pembantu ini mungkin bertanya beberapa soalan mudah (seperti nama, syarikat, industri anda dan perkara yang anda perlukan bantuan) dan menyimpan butiran penting dalam log pertanyaan kami di Google Sheets.</li>
+<li>Jika sesuai, pembantu ini boleh menawarkan masa untuk berbincang, yang ditempah melalui Cal.com.</li>
+<li><strong>Chee Loung membaca setiap pertanyaan dan membuat susulan sendiri</strong>, biasanya dalam tempoh satu hari bekerja dalam waktu bekerja kami (Isnin hingga Jumaat, waktu pejabat Malaysia).</li>
+</ol>
+<p>Sila ambil perhatian:</p>
+<ul>
+<li>AI boleh melakukan kesilapan. Apa-apa yang dikatakan oleh pembantu ini bukanlah sebut harga, tawaran atau nasihat yang mengikat. Manusia akan mengesahkan apa-apa perkara penting.</li>
+<li>Anda boleh meminta untuk bercakap dengan manusia pada bila-bila masa, contohnya dengan menaip "human".</li>
+<li>Pembantu ini tidak membuat keputusan tentang anda yang memberi kesan undang-undang atau kesan ketara yang serupa. Ia hanya membantu kami menjawab dan menyusun pertanyaan.</li>
+<li>Mesej kepada perniagaan di WhatsApp Business Platform disulitkan semasa penghantaran, tetapi tidak disulitkan hujung ke hujung dengan cara yang sama seperti perbualan antara rakan: platform Meta menyahsulitnya supaya pembantu kami dapat membaca dan membalasnya.</li>
+<li>Sila jangan berkongsi maklumat sensitif (lihat seksyen 4).</li>
+</ul>
+<h2 id="bm-data-yang-kami-kumpul-dan-caranya">4. Data yang kami kumpul dan caranya</h2>
+<p><strong>Apabila anda menghantar mesej kepada kami di WhatsApp</strong>, kami menerima:</p>
+<ul>
+<li>nombor telefon dan nama profil WhatsApp anda;</li>
+<li>kandungan mesej anda (teks, serta sebarang fail, imej atau nota suara yang anda hantar);</li>
+<li>masa setiap mesej dan status penghantarannya; dan</li>
+<li>apa-apa maklumat yang anda pilih untuk kongsikan semasa perbualan, seperti nama, syarikat, industri anda dan perkara yang anda perlukan bantuan.</li>
+</ul>
+<p><strong>Apabila anda mengisi borang pertanyaan kami</strong>, kami mengumpul nama, nama perniagaan, alamat e-mel dan jawapan anda kepada soalan "What's eating your week?" (Apa yang menghabiskan masa anda setiap minggu?). Nama, alamat e-mel dan mesej anda adalah wajib: tanpa maklumat ini, kami tidak dapat membalas anda. Nama perniagaan adalah pilihan.</p>
+<p><strong>Apabila anda menghantar e-mel kepada kami</strong>, kami menerima alamat e-mel, nama anda, apa-apa maklumat dalam tandatangan e-mel anda, serta kandungan e-mel dan lampirannya.</p>
+<p><strong>Apabila anda menempah panggilan</strong> melalui Cal.com, kami mengumpul nama, alamat e-mel anda, masa yang anda pilih dan sebarang catatan yang anda tambah.</p>
+<p><strong>Apabila anda melawat laman web kami</strong>, hos laman web kami, Cloudflare (lihat seksyen 12), menerima data teknikal secara automatik seperti alamat IP anda, jenis pelayar dan peranti, halaman yang anda minta dan masa lawatan anda. Kami tidak menggunakan data ini untuk mengenal pasti anda.</p>
+<p><strong>Sumber data anda.</strong> Hampir selalu terus daripada anda. Jika seseorang mengesyorkan kami kepada anda dan memberikan butiran hubungan anda kepada kami, kami akan memberitahu anda siapa yang merujuk anda apabila kami mula-mula menghubungi anda.</p>
+<p><strong>Sila jangan hantar data sensitif kepada kami.</strong> Anda tidak perlu berkongsi maklumat kesihatan, kepercayaan agama atau politik, data biometrik, butiran akaun kewangan atau maklumat seumpamanya dalam pertanyaan anda. Jika anda tetap menghantarnya, kami hanya akan menggunakannya untuk membalas anda dan akan memadam apa yang tidak diperlukan.</p>
+<p><strong>Adakah ia wajib?</strong> Pemberian data anda kepada kami adalah secara sukarela. Jika anda tidak memberikan cara untuk menghubungi anda, atau butiran yang mencukupi tentang pertanyaan anda, kami mungkin tidak dapat membantu.</p>
+<h2 id="bm-sebab-kami-menggunakan-data-anda-dan-asasnya">5. Sebab kami menggunakan data anda, dan asasnya</h2>
+<div class="table-wrap" role="region" aria-label="Jadual, tatal ke sisi pada skrin kecil" tabindex="0"><table>
+<thead>
+<tr>
+<th>Apa yang kami lakukan</th>
+<th>Sebab</th>
+<th>Asas undang-undang jika GDPR terpakai kepada anda</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Menjawab pertanyaan anda (termasuk melalui Pembantu Pertanyaan), memahami keperluan anda dan menyediakan cadangan</td>
+<td>Kerana anda meminta kami berbuat demikian</td>
+<td>Langkah yang diambil atas permintaan anda sebelum kemungkinan kontrak (Perkara 6(1)(b) GDPR); bagi individu yang menghubungi kami bagi pihak perniagaan, kepentingan sah kami untuk menjawab pertanyaan perniagaan (Perkara 6(1)(f))</td>
+</tr>
+<tr>
+<td>Membuat susulan melalui WhatsApp atau e-mel, dan mengatur panggilan</td>
+<td>Untuk menyelesaikan perbualan yang anda mulakan</td>
+<td>Langkah atas permintaan anda (Perkara 6(1)(b)); kepentingan sah (Perkara 6(1)(f)). Anda boleh meminta kami berhenti pada bila-bila masa</td>
+</tr>
+<tr>
+<td>Menyimpan log pertanyaan supaya tiada yang tercicir</td>
+<td>Untuk mengurus pertanyaan dengan betul</td>
+<td>Kepentingan sah (Perkara 6(1)(f))</td>
+</tr>
+<tr>
+<td>Menyampaikan perkhidmatan kami jika anda menjadi pelanggan</td>
+<td>Untuk melaksanakan kerja yang dipersetujui</td>
+<td>Kontrak (Perkara 6(1)(b))</td>
+</tr>
+<tr>
+<td>Menghantar surat berita, tip AI, jemputan bengkel atau mesej pemasaran lain</td>
+<td><strong>Hanya jika anda telah bersetuju untuk menerimanya</strong></td>
+<td>Persetujuan anda (Perkara 6(1)(a)), yang boleh anda tarik balik pada bila-bila masa</td>
+</tr>
+<tr>
+<td>Mengendalikan dan melindungi laman web dan sistem kami</td>
+<td>Untuk memastikan ia berfungsi dan selamat</td>
+<td>Kepentingan sah (Perkara 6(1)(f))</td>
+</tr>
+<tr>
+<td>Menyimpan rekod perniagaan dan cukai, serta mengendalikan tuntutan undang-undang</td>
+<td>Kerana dikehendaki oleh undang-undang, atau untuk melindungi hak kami</td>
+<td>Obligasi undang-undang (Perkara 6(1)(c)); kepentingan sah (Perkara 6(1)(f))</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Di bawah undang-undang Malaysia (Akta Perlindungan Data Peribadi 2010, sebagaimana dipinda)</strong>, kami memproses data peribadi anda dengan persetujuan anda, yang anda berikan apabila menghubungi kami setelah dimaklumkan tentang notis ini (balasan WhatsApp pertama kami dan borang pertanyaan kami memautkan kepadanya), atau apabila undang-undang membenarkan kami memprosesnya tanpa persetujuan, contohnya apabila ia perlu untuk mengambil langkah yang anda minta sebelum memasuki kontrak, atau untuk mematuhi obligasi undang-undang.</p>
+<p><strong>Tiada pemasaran tanpa persetujuan.</strong> Kami tidak akan menghantar mesej pemasaran kepada anda melalui WhatsApp atau e-mel melainkan anda telah bersetuju, dan anda boleh menarik diri pada bila-bila masa. Membalas pertanyaan anda sendiri bukanlah pemasaran.</p>
+<p>Kami tidak menjual data peribadi anda.</p>
+<h2 id="bm-pihak-yang-mengendalikan-data-anda-bagi-pihak-kami">6. Pihak yang mengendalikan data anda bagi pihak kami</h2>
+<p>Kami menggunakan penyedia perkhidmatan berikut ("pemproses data") untuk mengendalikan pertanyaan. Mereka bertindak mengikut arahan kami:</p>
+<div class="table-wrap" role="region" aria-label="Jadual, tatal ke sisi pada skrin kecil" tabindex="0"><table>
+<thead>
+<tr>
+<th>Penyedia</th>
+<th>Peranan mereka</th>
+<th>Lokasi</th>
+<th>Maklumat lanjut</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Meta</strong> (WhatsApp Business Platform)</td>
+<td>Menghantar mesej WhatsApp antara anda dan Pembantu Pertanyaan kami</td>
+<td>Pusat data Meta, yang mungkin di luar Malaysia</td>
+<td>Menurut Meta, bagi Cloud API, Meta bertindak sebagai pemproses data untuk perniagaan dan menyimpan mesej selama maksimum 30 hari. WhatsApp juga mengendalikan akaun WhatsApp anda di bawah <a href="https://www.whatsapp.com/legal/privacy-policy?lang=ms">Dasar Privasinya</a> sendiri. Lihat juga <a href="https://www.whatsapp.com/legal/business-data-processing-terms?lang=ms">Terma Pemprosesan Data WhatsApp Business</a> dan <a href="https://developers.facebook.com/documentation/business-messaging/whatsapp/data-privacy-and-security">privasi &amp; keselamatan data Cloud API</a>.</td>
+</tr>
+<tr>
+<td><strong>Anthropic</strong> (Claude API)</td>
+<td>Menjana balasan Pembantu Pertanyaan berdasarkan perbualan</td>
+<td>Amerika Syarikat</td>
+<td>Menurut dasar yang diterbitkan oleh Anthropic bagi pelanggan API komersial, input dan output tidak digunakan untuk melatih modelnya secara lalai, dan dipadam daripada sistem Anthropic dalam tempoh 30 hari, melainkan tempoh yang lebih lama terpakai (contohnya, jika kandungan ditandakan untuk semakan dasar penggunaan, atau jika dikehendaki oleh undang-undang). Lihat <a href="https://privacy.claude.com">Pusat Privasi</a> Anthropic.</td>
+</tr>
+<tr>
+<td><strong>Google</strong> (Google Workspace, cth. Google Sheets)</td>
+<td>Menyimpan log pertanyaan kami</td>
+<td>Pusat data Google, yang mungkin di luar Malaysia</td>
+<td><a href="https://workspace.google.com/terms/dpa_terms.html">Terma Pemprosesan Data Google Workspace</a></td>
+</tr>
+<tr>
+<td><strong>Cal.com</strong></td>
+<td>Membolehkan anda menempah panggilan dengan kami</td>
+<td>Amerika Syarikat</td>
+<td>Cal.com bertindak sebagai pemproses bagi tempahan yang dibuat melalui pautan tempahan kami. <a href="https://cal.com/privacy">Dasar Privasi Cal.com</a> dan <a href="https://cal.com/dpa">DPA</a></td>
+</tr>
+<tr>
+<td><strong>Penyedia hos awan kami</strong></td>
+<td>Mengehoskan sistem yang menghubungkan WhatsApp, model AI dan log pertanyaan kami</td>
+<td>Mungkin di luar Malaysia</td>
+<td>Kami akan memaklumkan nama penyedia atas permintaan.</td>
+</tr>
+<tr>
+<td><strong>Cloudflare</strong></td>
+<td>Mengehoskan laman web kami, melindunginya daripada serangan, dan memajukan e-mel yang dihantar ke info@mageworks.ai ke peti masuk kami</td>
+<td>Rangkaian global; Cloudflare berpangkalan di Amerika Syarikat</td>
+<td><a href="https://www.cloudflare.com/privacypolicy/">Dasar Privasi Cloudflare</a></td>
+</tr>
+<tr>
+<td><strong>Web3Forms</strong></td>
+<td>Menerima butiran yang anda hantar melalui borang pertanyaan kami dan menghantarnya kepada kami melalui e-mel</td>
+<td>Di luar Malaysia</td>
+<td><a href="https://web3forms.com/privacy">Dasar Privasi Web3Forms</a></td>
+</tr>
+<tr>
+<td><strong>hCaptcha</strong> (Intuit)</td>
+<td>Memastikan penghantaran borang dibuat oleh manusia, bukan bot spam. Ia menerima data teknikal seperti alamat IP dan butiran pelayar anda</td>
+<td>Amerika Syarikat</td>
+<td><a href="https://www.hcaptcha.com/privacy">Dasar Privasi hCaptcha</a></td>
+</tr>
+<tr>
+<td><strong>Penyedia e-mel kami</strong></td>
+<td>Menyimpan e-mel yang kami hantar dan terima</td>
+<td>Mungkin di luar Malaysia</td>
+<td>Kami akan memaklumkan nama penyedia atas permintaan.</td>
+</tr>
+</tbody>
+</table></div>
+<p>Kami juga berkongsi data peribadi, hanya apabila perlu, dengan:</p>
+<ul>
+<li><strong>individu yang bekerja bersama kami</strong> dalam sesuatu projek, seperti pekerja bebas atau subkontraktor, yang terikat dengan kewajipan kerahsiaan;</li>
+<li><strong>penasihat profesional</strong> seperti akauntan atau peguam kami, dan <strong>pihak berkuasa</strong> seperti mahkamah, pengawal selia atau pihak berkuasa cukai apabila dikehendaki oleh undang-undang; dan</li>
+<li><strong>perniagaan pengganti</strong>, jika MageWorks distruktur semula (contohnya, dipindahkan ke dalam syarikat baharu) atau diambil alih. Kami akan memaklumkan anda jika perkara ini berlaku.</li>
+</ul>
+<h2 id="bm-pemindahan-ke-luar-negara">7. Pemindahan ke luar negara</h2>
+<p>Kami berpangkalan di Malaysia, tetapi sesetengah penyedia kami memproses data di negara lain, termasuk Amerika Syarikat. Apabila data anda dipindahkan ke luar Malaysia, kami hanya berbuat demikian atas asas yang dibenarkan oleh seksyen 129 Akta Perlindungan Data Peribadi 2010 (sebagaimana dipinda pada 2024). Secara praktikal, ini bermaksud pemindahan itu perlu untuk menjawab pertanyaan anda atau mengambil langkah yang anda minta sebelum kontrak, atau kami telah mengambil langkah berjaga-jaga yang munasabah dan menjalankan usaha wajar, contohnya dengan menggunakan penyedia yang terikat dengan terma pemprosesan data yang melindungi data anda.</p>
+<p><strong>Jika anda berada di EU, EEA atau UK:</strong> apabila anda menghubungi kami, data anda dihantar kepada kami di Malaysia. Malaysia tidak mempunyai "keputusan kecukupan" (adequacy decision) daripada Suruhanjaya Eropah. Apabila penyedia kami memindahkan data selanjutnya, kami bergantung pada perlindungan mereka, seperti klausa kontrak standard atau, bagi sesetengah penyedia di Amerika Syarikat, Rangka Kerja Privasi Data EU-AS. Hubungi kami jika anda ingin mendapatkan maklumat lanjut tentang perlindungan ini.</p>
+<h2 id="bm-tempoh-kami-menyimpan-data">8. Tempoh kami menyimpan data</h2>
+<p>Kami menyimpan data peribadi hanya selama yang diperlukan:</p>
+<ul>
+<li><strong>Pertanyaan dan petunjuk (leads) tanpa sebarang tindakan lanjut</strong> (WhatsApp, borang atau e-mel): dipadam 12 bulan selepas hubungan terakhir kami dengan anda.</li>
+<li><strong>Rekod perbualan Pembantu Pertanyaan dalam sistem kami sendiri:</strong> dipadam selepas 90 hari. Butiran penting disimpan dalam log pertanyaan kami seperti di atas.</li>
+<li><strong>Salinan yang disimpan oleh penyedia kami:</strong> Meta menyimpan mesej Cloud API selama maksimum 30 hari, dan Anthropic memadam input dan output API dalam tempoh 30 hari secara lalai (lihat seksyen 6).</li>
+<li><strong>Tempahan Cal.com:</strong> dipadam 12 bulan selepas panggilan, melainkan anda menjadi pelanggan.</li>
+<li><strong>Pelanggan:</strong> sepanjang tempoh kerjasama kita, dan selepas itu sehingga 7 tahun untuk memenuhi keperluan penyimpanan rekod cukai dan perakaunan.</li>
+<li><strong>Senarai pemasaran:</strong> sehingga anda berhenti melanggan. Kami menyimpan rekod minimum bahawa anda telah berhenti melanggan supaya kami tidak menghubungi anda lagi.</li>
+<li><strong>Data teknikal laman web:</strong> selama penyedia hos kami dan Google menyimpannya di bawah dasar mereka sendiri.</li>
+</ul>
+<h2 id="bm-menjaga-keselamatan-data-anda">9. Menjaga keselamatan data anda</h2>
+<p>Kami mengambil langkah praktikal, teknikal dan organisasi yang munasabah untuk melindungi data anda, termasuk log masuk dua faktor pada akaun kami, mengehadkan akses kepada individu yang memerlukannya sahaja, sambungan tersulit antara sistem kami, dan menggunakan penyedia perkhidmatan yang mantap. Tiada sistem yang selamat sepenuhnya, tetapi jika berlaku pelanggaran data yang mungkin menyebabkan kemudaratan ketara kepada anda, kami akan memaklumkan Pesuruhjaya Perlindungan Data Peribadi dan anda, sebagaimana yang dikehendaki oleh undang-undang.</p>
+<h2 id="bm-hak-anda">10. Hak anda</h2>
+<p><strong>Di bawah undang-undang Malaysia</strong>, anda berhak untuk:</p>
+<ul>
+<li><strong>mengakses</strong> data peribadi yang kami simpan tentang anda, dan mendapatkan salinannya;</li>
+<li><strong>membetulkan</strong> data yang tidak tepat, tidak lengkap, mengelirukan atau tidak terkini;</li>
+<li><strong>menarik balik persetujuan</strong> anda terhadap pemprosesan data anda, termasuk meminta kami memadamnya (lihat seksyen 11);</li>
+<li><strong>menghentikan pemasaran langsung</strong> pada bila-bila masa;</li>
+<li><strong>meminta kami menghentikan pemprosesan</strong> yang mungkin menyebabkan kerosakan atau distres yang besar kepada anda; dan</li>
+<li><strong>meminta kami menghantar data anda kepada organisasi lain</strong> (kemudahalihan data), jika ini boleh dilaksanakan secara teknikal dan format data adalah serasi.</li>
+</ul>
+<p><strong>Jika GDPR terpakai kepada anda</strong> (contohnya, jika anda berada di EU), anda juga berhak meminta data anda dipadam, mengehadkan cara kami menggunakannya, membantah pemprosesan yang berasaskan kepentingan sah kami, dan menerima data anda dalam format mudah alih. Anda juga boleh membuat aduan kepada pihak berkuasa perlindungan data tempatan anda (di Belgium, <a href="https://www.dataprotectionauthority.be">Data Protection Authority</a>).</p>
+<p><strong>Cara menggunakan hak anda.</strong> Hantar e-mel ke info@mageworks.ai dengan subjek "Permintaan privasi", atau hantar mesej kepada kami di WhatsApp, dan nyatakan apa yang anda mahu. Kami mungkin perlu mengesahkan identiti anda terlebih dahulu, contohnya dengan meminta anda membalas daripada nombor telefon atau alamat e-mel yang sama. Kami akan memberi maklum balas dalam tempoh 21 hari. Permintaan biasanya percuma; jika sesuatu fi dibenarkan dan dikenakan (contohnya, bagi sesetengah permintaan akses di bawah undang-undang Malaysia), kami akan memaklumkan anda sebelum meneruskan.</p>
+<p>Jika anda tidak berpuas hati dengan cara kami mengendalikan data anda, sila maklumkan kepada kami terlebih dahulu supaya kami dapat membetulkannya. Anda juga boleh menghubungi <a href="https://www.pdp.gov.my">Pesuruhjaya Perlindungan Data Peribadi Malaysia</a>.</p>
+<h2 id="padam-data-anda">11. Cara memadam data anda</h2>
+<p>Anda boleh meminta kami memadam data peribadi yang kami simpan tentang anda pada bila-bila masa, melalui salah satu cara berikut:</p>
+<ul>
+<li><strong>Di WhatsApp:</strong> hantar mesej <strong>"delete my data"</strong> ke nombor WhatsApp perniagaan kami (akan dipaparkan di laman web kami apabila ia aktif).</li>
+<li><strong>Melalui e-mel:</strong> tulis kepada <strong>info@mageworks.ai</strong> dengan subjek <strong>"Delete my data"</strong>, dan sertakan nombor telefon atau alamat e-mel yang anda gunakan untuk menghubungi kami.</li>
+</ul>
+<p><strong>Apa yang berlaku seterusnya:</strong></p>
+<ol>
+<li>Kami mengesahkan penerimaan permintaan anda dalam tempoh 3 hari bekerja. Jika kami tidak dapat memastikan permintaan itu datang daripada anda, kami mungkin meminta anda mengesahkannya daripada nombor telefon atau alamat e-mel yang sama.</li>
+<li>Dalam tempoh 30 hari, kami memadam butiran anda daripada log pertanyaan kami, rekod perbualan Pembantu Pertanyaan, e-mel kami dan sebarang tempahan Cal.com, dan kami memaklumkan anda apabila selesai.</li>
+<li>Salinan yang disimpan oleh penyedia kami dipadam mengikut peraturan penyimpanan mereka sendiri: Meta menyimpan mesej Cloud API selama maksimum 30 hari, dan Anthropic memadam data API dalam tempoh 30 hari secara lalai.</li>
+</ol>
+<p><strong>Apa yang mungkin kami simpan:</strong> rekod minimum bahawa anda telah meminta kami memadam data anda dan tidak menghubungi anda lagi, serta apa-apa rekod yang wajib kami simpan menurut undang-undang (contohnya, invois jika anda pernah menjadi pelanggan). Kami akan memaklumkan anda jika ada apa-apa yang disimpan dan sebabnya.</p>
+<p><strong>Sila ambil perhatian:</strong> memadam perbualan dalam aplikasi WhatsApp anda sendiri tidak memadam salinan kami, jadi sila buat permintaan melalui salah satu cara di atas. Akaun WhatsApp anda sendiri dikendalikan oleh WhatsApp; lihat <a href="https://www.whatsapp.com/legal/privacy-policy?lang=ms">Dasar Privasi WhatsApp</a> tentang cara mengurusnya.</p>
+<h2 id="bm-kuki-fon-dan-analitik">12. Kuki, fon dan analitik</h2>
+<ul>
+<li><strong>Analitik dan pengiklanan:</strong> pada masa ini kami <strong>tidak</strong> menggunakan kuki analitik, pengiklanan atau penjejakan di laman web kami.</li>
+<li><strong>Kuki yang diperlukan:</strong> hos laman web kami (Cloudflare) dan semakan spam kami (hCaptcha) mungkin menggunakan sebilangan kecil kuki atau teknologi serupa yang benar-benar diperlukan untuk memastikan laman web selamat dan menghalang spam.</li>
+<li><strong>Fon:</strong> fon kami disediakan dari laman web kami sendiri, jadi tiada permintaan fon dihantar kepada Google atau pihak ketiga lain.</li>
+</ul>
+<h2 id="bm-kanak-kanak">13. Kanak-kanak</h2>
+<p>Perkhidmatan kami adalah untuk perniagaan dan tidak ditujukan kepada sesiapa yang berumur bawah 18 tahun. Kami tidak dengan sengaja mengumpul data peribadi daripada kanak-kanak. Jika anda percaya seorang kanak-kanak telah menghubungi kami, sila maklumkan kepada kami dan kami akan memadam data mereka.</p>
+<h2 id="bm-perubahan-kepada-notis-ini">14. Perubahan kepada notis ini</h2>
+<p>Kami mungkin mengemas kini notis ini apabila alat atau perkhidmatan kami berubah. Kami akan menukar tarikh "Kemas kini terakhir" di bahagian atas dan, jika perubahan itu ketara, memaklumkan anda apabila munasabah untuk berbuat demikian.</p>
+<h2 id="bm-hubungi-kami">15. Hubungi kami</h2>
+<p>Soalan, permintaan atau aduan tentang data peribadi anda:</p>
+<p><strong>MageWorks AI Solutions</strong><br />
+Malaysia (alamat penuh perniagaan akan dikemas kini setelah pendaftaran selesai)<br />
+E-mel: info@mageworks.ai<br />
+Pegawai perhubungan perlindungan data: Chee Loung, Pengasas</p>
+</article>
+
+<article id="en" class="notice" lang="en" aria-label="Privacy Notice (English)">
+<header class="doc-head"><h1>Privacy Notice</h1><p class="updated"><strong>Last updated: 6 November 2026</strong></p></header><details class="toc"><summary>On this page</summary><ol><li><a href="#en-the-short-version">The short version</a></li><li><a href="#en-who-we-are">1. Who we are</a></li><li><a href="#en-what-this-notice-covers">2. What this notice covers</a></li><li><a href="#en-talking-to-our-ai-enquiry-assistant">3. Talking to our AI Enquiry Assistant</a></li><li><a href="#en-what-we-collect-and-how">4. What we collect and how</a></li><li><a href="#en-why-we-use-your-data-and-on-what-basis">5. Why we use your data, and on what basis</a></li><li><a href="#en-who-handles-your-data-for-us">6. Who handles your data for us</a></li><li><a href="#en-international-transfers">7. International transfers</a></li><li><a href="#en-how-long-we-keep-it">8. How long we keep it</a></li><li><a href="#en-keeping-your-data-safe">9. Keeping your data safe</a></li><li><a href="#en-your-rights">10. Your rights</a></li><li><a href="#delete-your-data">11. How to delete your data</a></li><li><a href="#en-cookies-fonts-and-analytics">12. Cookies, fonts and analytics</a></li><li><a href="#en-children">13. Children</a></li><li><a href="#en-changes-to-this-notice">14. Changes to this notice</a></li><li><a href="#en-contact-us">15. Contact us</a></li></ol></details>
+<p>This notice explains what personal data MageWorks collects when you visit mageworks.ai, message us on WhatsApp, fill in our enquiry form or email us; why we collect it; who handles it for us; and the choices and rights you have. It is published in English and Bahasa Malaysia. If there is any difference between the two versions, the English version prevails.</p>
+<section class="summary" aria-labelledby="en-the-short-version"><h2 id="en-the-short-version">The short version</h2>
+<ul>
+<li><strong>Our WhatsApp replies may be written by AI.</strong> Our Enquiry Assistant is an AI assistant. It answers first, and Chee Loung, our founder, personally follows up.</li>
+<li>We collect what you send us (such as your phone number, WhatsApp profile name, name, company and what you need help with) plus basic technical data.</li>
+<li>We use it to answer your enquiry, follow up and arrange a call. We never sell it, and we don't send marketing messages unless you've said yes.</li>
+<li>A few trusted providers handle it for us: Meta (WhatsApp), Anthropic (AI replies), Google (our enquiry log), Cal.com (booking calls) and our hosting provider. Some of them are outside Malaysia.</li>
+<li>You can ask to see, correct or delete your data at any time. To delete it, message <strong>"delete my data"</strong> on WhatsApp or email <strong>info@mageworks.ai</strong>. <a href="#delete-your-data">See how</a>.</li>
+</ul></section>
+<h2 id="en-who-we-are">1. Who we are</h2>
+<p>MageWorks is an independent AI consultancy based in Malaysia, founded by Chee Loung. We help businesses decide where AI makes sense, build automations and digital employees, run AI workshops and support what we build.</p>
+<p>The business responsible for your personal data (the "data controller") is:</p>
+<p><strong>MageWorks AI Solutions</strong><br />
+Registration no.: registration in progress<br />
+Address: Malaysia (full business address to follow once registration is complete)<br />
+Email: info@mageworks.ai<br />
+Data protection contact: Chee Loung, Founder (info@mageworks.ai)</p>
+<p>In this notice, "MageWorks", "we", "us" and "our" mean MageWorks AI Solutions.</p>
+<h2 id="en-what-this-notice-covers">2. What this notice covers</h2>
+<p>This notice covers:</p>
+<ul>
+<li>people who visit our website;</li>
+<li>people who message our WhatsApp business number, including conversations with our <strong>Enquiry Assistant</strong> (the WhatsApp integration registered with Meta as the app "MageWorksConnector");</li>
+<li>people who contact us through our enquiry form or by email; and</li>
+<li>people who book a call with us or sign up to hear from us.</li>
+</ul>
+<p>It does <strong>not</strong> cover data we handle while working on a client's project, including data processed by digital employees we build or host for a client. That work is governed by our written agreement with the client. If you are a customer or employee of one of our clients, please read that client's own privacy notice.</p>
+<h2 id="en-talking-to-our-ai-enquiry-assistant">3. Talking to our AI Enquiry Assistant</h2>
+<p>When you message MageWorks on WhatsApp, <strong>the first replies you receive may be generated by AI, not typed by a person.</strong> Here's how it works:</p>
+<ol>
+<li>Your message reaches us through Meta's WhatsApp Business Platform.</li>
+<li>Our system, run on a cloud hosting provider, sends the conversation to Anthropic, whose AI model writes a reply. The reply is sent back to you on WhatsApp.</li>
+<li>The assistant may ask a few simple questions (such as your name, company, industry and what you need help with) and save the key details in our enquiry log in Google Sheets.</li>
+<li>If it makes sense, the assistant can offer you a time to talk, booked through Cal.com.</li>
+<li><strong>Chee Loung reads every enquiry and follows up personally</strong>, usually within one working day during our working hours (Monday to Friday, Malaysia business hours).</li>
+</ol>
+<p>Please keep in mind:</p>
+<ul>
+<li>AI can make mistakes. Nothing the assistant says is a binding quote, offer or advice. A person will confirm anything important.</li>
+<li>You can ask for a person at any time, for example by typing "human".</li>
+<li>The assistant does not make decisions about you that have legal or similarly significant effects. It just helps us answer and organise enquiries.</li>
+<li>Messages to a business on the WhatsApp Business Platform are encrypted in transit, but they are not end-to-end encrypted in the same way as chats between friends: Meta's platform decrypts them so our assistant can read and reply to them.</li>
+<li>Please don't share sensitive information (see section 4).</li>
+</ul>
+<h2 id="en-what-we-collect-and-how">4. What we collect and how</h2>
+<p><strong>When you message us on WhatsApp</strong>, we receive:</p>
+<ul>
+<li>your phone number and WhatsApp profile name;</li>
+<li>the content of your messages (text, and any files, images or voice notes you send);</li>
+<li>the time of each message and its delivery status; and</li>
+<li>anything you choose to share during the conversation, such as your name, company, industry and what you need help with.</li>
+</ul>
+<p><strong>When you fill in our enquiry form</strong>, we collect your name, business name, email address and your answer to "What's eating your week?". Your name, email address and message are required: without them we can't reply. Your business name is optional.</p>
+<p><strong>When you email us</strong>, we receive your email address, your name, anything in your email signature and the content of your email and attachments.</p>
+<p><strong>When you book a call</strong> through Cal.com, we collect your name, email address, the time you choose and any notes you add.</p>
+<p><strong>When you visit our website</strong>, our website host, Cloudflare (see section 12), automatically receives technical data such as your IP address, browser and device type, the page you requested and the time of your visit. We do not use this to identify you.</p>
+<p><strong>Where your data comes from.</strong> Almost always directly from you. If someone recommends us to you and passes on your contact details, we'll tell you who referred you when we first get in touch.</p>
+<p><strong>Please don't send us sensitive data.</strong> There's no need to share health information, religious or political beliefs, biometric data, financial account details or similar information in an enquiry. If you send it anyway, we'll only use it to reply to you and will delete what we don't need.</p>
+<p><strong>Is it required?</strong> Giving us your data is voluntary. If you don't give us a way to contact you, or enough detail about your enquiry, we may not be able to help.</p>
+<h2 id="en-why-we-use-your-data-and-on-what-basis">5. Why we use your data, and on what basis</h2>
+<div class="table-wrap" role="region" aria-label="Table, scroll sideways on small screens" tabindex="0"><table>
+<thead>
+<tr>
+<th>What we do</th>
+<th>Why</th>
+<th>Legal basis if the GDPR applies to you</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Answer your enquiry (including through the Enquiry Assistant), understand your needs and prepare a proposal</td>
+<td>Because you asked us to</td>
+<td>Steps taken at your request before a possible contract (Art. 6(1)(b) GDPR); for people contacting us on behalf of a business, our legitimate interest in answering business enquiries (Art. 6(1)(f))</td>
+</tr>
+<tr>
+<td>Follow up on your enquiry by WhatsApp or email, and arrange a call</td>
+<td>To finish the conversation you started</td>
+<td>Steps at your request (Art. 6(1)(b)); legitimate interest (Art. 6(1)(f)). You can tell us to stop at any time</td>
+</tr>
+<tr>
+<td>Keep an enquiry log so nothing gets lost</td>
+<td>To manage enquiries properly</td>
+<td>Legitimate interest (Art. 6(1)(f))</td>
+</tr>
+<tr>
+<td>Deliver our services if you become a client</td>
+<td>To do the work we agreed</td>
+<td>Contract (Art. 6(1)(b))</td>
+</tr>
+<tr>
+<td>Send newsletters, AI tips, workshop invitations or other marketing messages</td>
+<td><strong>Only if you've opted in</strong></td>
+<td>Your consent (Art. 6(1)(a)), which you can withdraw at any time</td>
+</tr>
+<tr>
+<td>Run and secure our website and systems</td>
+<td>To keep them working and safe</td>
+<td>Legitimate interest (Art. 6(1)(f))</td>
+</tr>
+<tr>
+<td>Keep business and tax records, and handle legal claims</td>
+<td>Because the law requires it, or to protect our rights</td>
+<td>Legal obligation (Art. 6(1)(c)); legitimate interest (Art. 6(1)(f))</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Under Malaysian law (Personal Data Protection Act 2010, as amended)</strong>, we process your personal data with your consent, which you give when you contact us after being told about this notice (our first WhatsApp reply and our enquiry form link to it), or where the law allows us to process it without consent, for example where it is needed to take steps you asked for before entering into a contract, or to comply with a legal obligation.</p>
+<p><strong>No marketing without consent.</strong> We won't send you marketing messages on WhatsApp or by email unless you've opted in, and you can opt out at any time. Replying to your own enquiry is not marketing.</p>
+<p>We do not sell your personal data.</p>
+<h2 id="en-who-handles-your-data-for-us">6. Who handles your data for us</h2>
+<p>We use the following service providers ("data processors") to run our enquiry handling. They act on our instructions:</p>
+<div class="table-wrap" role="region" aria-label="Table, scroll sideways on small screens" tabindex="0"><table>
+<thead>
+<tr>
+<th>Provider</th>
+<th>What they do for us</th>
+<th>Where</th>
+<th>More information</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Meta</strong> (WhatsApp Business Platform)</td>
+<td>Delivers WhatsApp messages between you and our Enquiry Assistant</td>
+<td>Meta data centres, which may be outside Malaysia</td>
+<td>Meta says that, for the Cloud API, it acts as a data processor for the business and keeps messages for at most 30 days. WhatsApp also handles your WhatsApp account under its own <a href="https://www.whatsapp.com/legal/privacy-policy">Privacy Policy</a>. See also the <a href="https://www.whatsapp.com/legal/business-data-processing-terms">WhatsApp Business Data Processing Terms</a> and <a href="https://developers.facebook.com/documentation/business-messaging/whatsapp/data-privacy-and-security">Cloud API data privacy &amp; security</a>.</td>
+</tr>
+<tr>
+<td><strong>Anthropic</strong> (Claude API)</td>
+<td>Generates the Enquiry Assistant's replies from the conversation</td>
+<td>United States</td>
+<td>Under Anthropic's published policies for commercial API customers, inputs and outputs are not used to train its models by default, and are deleted from Anthropic's systems within 30 days, unless a longer period applies (for example, if content is flagged for a usage-policy review, or where the law requires). See Anthropic's <a href="https://privacy.claude.com">Privacy Center</a>.</td>
+</tr>
+<tr>
+<td><strong>Google</strong> (Google Workspace, e.g. Google Sheets)</td>
+<td>Stores our enquiry log</td>
+<td>Google data centres, which may be outside Malaysia</td>
+<td><a href="https://workspace.google.com/terms/dpa_terms.html">Google Workspace Data Processing Terms</a></td>
+</tr>
+<tr>
+<td><strong>Cal.com</strong></td>
+<td>Lets you book a call with us</td>
+<td>United States</td>
+<td>Cal.com acts as a processor for bookings made through our booking link. <a href="https://cal.com/privacy">Cal.com Privacy Policy</a> and <a href="https://cal.com/dpa">DPA</a></td>
+</tr>
+<tr>
+<td><strong>Our cloud hosting provider</strong></td>
+<td>Hosts the system that connects WhatsApp, the AI model and our enquiry log</td>
+<td>May be outside Malaysia</td>
+<td>We'll tell you which provider on request.</td>
+</tr>
+<tr>
+<td><strong>Cloudflare</strong></td>
+<td>Hosts our website, protects it from attacks, and forwards emails sent to info@mageworks.ai to our inbox</td>
+<td>Global network; Cloudflare is based in the United States</td>
+<td><a href="https://www.cloudflare.com/privacypolicy/">Cloudflare Privacy Policy</a></td>
+</tr>
+<tr>
+<td><strong>Web3Forms</strong></td>
+<td>Receives the details you submit in our enquiry form and emails them to us</td>
+<td>Outside Malaysia</td>
+<td><a href="https://web3forms.com/privacy">Web3Forms Privacy Policy</a></td>
+</tr>
+<tr>
+<td><strong>hCaptcha</strong> (Intuit)</td>
+<td>Checks that a form submission comes from a person, not a spam bot. It receives technical data such as your IP address and browser details</td>
+<td>United States</td>
+<td><a href="https://www.hcaptcha.com/privacy">hCaptcha Privacy Policy</a></td>
+</tr>
+<tr>
+<td><strong>Our email provider</strong></td>
+<td>Stores the emails we send and receive</td>
+<td>May be outside Malaysia</td>
+<td>We'll tell you which provider on request.</td>
+</tr>
+</tbody>
+</table></div>
+<p>We also share personal data, only where needed, with:</p>
+<ul>
+<li><strong>people who work with us</strong> on a project, such as freelancers or subcontractors, under a duty of confidentiality;</li>
+<li><strong>professional advisers</strong> such as our accountant or lawyer, and <strong>authorities</strong> such as courts, regulators or tax authorities where the law requires it; and</li>
+<li><strong>a successor business</strong>, if MageWorks is restructured (for example, moved into a new company) or taken over. We would tell you if this happened.</li>
+</ul>
+<h2 id="en-international-transfers">7. International transfers</h2>
+<p>We're based in Malaysia, but some of our providers process data in other countries, including the United States. When your data is transferred outside Malaysia, we do so only on a basis allowed by section 129 of the Personal Data Protection Act 2010 (as amended in 2024). In practice, this means the transfer is needed to answer your enquiry or take steps you asked for before a contract, or we have taken reasonable precautions and exercised due diligence, for example by using providers bound by data processing terms that protect your data.</p>
+<p><strong>If you are in the EU, EEA or UK:</strong> when you contact us, your data is sent to us in Malaysia. Malaysia does not have an "adequacy decision" from the European Commission. Where our providers transfer data onward, we rely on their safeguards, such as standard contractual clauses or, for some US providers, the EU-US Data Privacy Framework. Contact us if you'd like more information about these safeguards.</p>
+<h2 id="en-how-long-we-keep-it">8. How long we keep it</h2>
+<p>We keep personal data only as long as we need it:</p>
+<ul>
+<li><strong>Enquiries and leads with no further engagement</strong> (WhatsApp, form or email): deleted 12 months after our last contact with you.</li>
+<li><strong>Enquiry Assistant conversation records on our own system:</strong> deleted after 90 days. The key details are kept in our enquiry log as above.</li>
+<li><strong>Copies held by our providers:</strong> Meta keeps Cloud API messages for at most 30 days, and Anthropic deletes API inputs and outputs within 30 days by default (see section 6).</li>
+<li><strong>Cal.com bookings:</strong> deleted 12 months after the call, unless you become a client.</li>
+<li><strong>Clients:</strong> for the duration of our work together, then for up to 7 years to meet tax and accounting record-keeping requirements.</li>
+<li><strong>Marketing list:</strong> until you unsubscribe. We keep a minimal record that you unsubscribed so we don't contact you again.</li>
+<li><strong>Website technical data:</strong> as long as our hosting provider and Google keep it under their own policies.</li>
+</ul>
+<h2 id="en-keeping-your-data-safe">9. Keeping your data safe</h2>
+<p>We take reasonable practical, technical and organisational steps to protect your data, including two-factor sign-in on our accounts, limiting access to the people who need it, encrypted connections between our systems, and using established service providers. No system is perfectly secure, but if a data breach happens that is likely to cause you significant harm, we will notify the Personal Data Protection Commissioner and you, as the law requires.</p>
+<h2 id="en-your-rights">10. Your rights</h2>
+<p><strong>Under Malaysian law</strong>, you have the right to:</p>
+<ul>
+<li><strong>access</strong> the personal data we hold about you, and get a copy;</li>
+<li><strong>correct</strong> data that is inaccurate, incomplete, misleading or out of date;</li>
+<li><strong>withdraw your consent</strong> to our processing of your data, which includes asking us to delete it (see section 11);</li>
+<li><strong>stop direct marketing</strong> at any time;</li>
+<li><strong>ask us to stop processing</strong> that is likely to cause you substantial damage or distress; and</li>
+<li><strong>ask us to transmit your data to another organisation</strong> (data portability), where this is technically feasible and the data formats are compatible.</li>
+</ul>
+<p><strong>If the GDPR applies to you</strong> (for example, if you are in the EU), you also have the right to have your data erased, to restrict how we use it, to object to processing based on our legitimate interests, and to receive your data in a portable format. You can also complain to your local data protection authority (in Belgium, the <a href="https://www.dataprotectionauthority.be">Data Protection Authority</a>).</p>
+<p><strong>How to use your rights.</strong> Email info@mageworks.ai with the subject "Privacy request", or message us on WhatsApp, and tell us what you'd like. We may need to confirm your identity first, for example by replying from the same phone number or email address. We'll respond within 21 days. Requests are usually free; if a fee is ever allowed and applies (for example, for some access requests under Malaysian law), we'll tell you before going ahead.</p>
+<p>If you're not happy with how we've handled your data, please tell us first so we can put it right. You can also contact the <a href="https://www.pdp.gov.my">Personal Data Protection Commissioner of Malaysia</a>.</p>
+<h2 id="delete-your-data">11. How to delete your data</h2>
+<p>You can ask us to delete the personal data we hold about you at any time, in either of these ways:</p>
+<ul>
+<li><strong>On WhatsApp:</strong> send the message <strong>"delete my data"</strong> to our WhatsApp business number (shown on our website once it's live).</li>
+<li><strong>By email:</strong> write to <strong>info@mageworks.ai</strong> with the subject <strong>"Delete my data"</strong>, and include the phone number or email address you used to contact us.</li>
+</ul>
+<p><strong>What happens next:</strong></p>
+<ol>
+<li>We confirm we've received your request within 3 working days. If we can't tell that the request comes from you, we may ask you to confirm it from the same phone number or email address.</li>
+<li>Within 30 days, we delete your details from our enquiry log, our Enquiry Assistant conversation records, our emails, and any Cal.com bookings, and we tell you when it's done.</li>
+<li>Copies held by our providers are removed under their own retention rules: Meta keeps Cloud API messages for at most 30 days, and Anthropic deletes API data within 30 days by default.</li>
+</ol>
+<p><strong>What we may keep:</strong> a minimal record that you asked us to delete your data and not to contact you again, and any records we must keep by law (for example, invoices if you were a client). We'll tell you if anything is kept and why.</p>
+<p><strong>Please note:</strong> deleting a chat in your own WhatsApp app does not delete our copy, so please ask us using one of the options above. Your WhatsApp account itself is handled by WhatsApp; see the <a href="https://www.whatsapp.com/legal/privacy-policy">WhatsApp Privacy Policy</a> for how to manage it.</p>
+<h2 id="en-cookies-fonts-and-analytics">12. Cookies, fonts and analytics</h2>
+<ul>
+<li><strong>Analytics and advertising:</strong> we currently do <strong>not</strong> use analytics, advertising or tracking cookies on our website.</li>
+<li><strong>Necessary cookies:</strong> our website host (Cloudflare) and our spam check (hCaptcha) may use a small number of cookies or similar technologies that are strictly needed to keep the site secure and stop spam.</li>
+<li><strong>Fonts:</strong> our fonts are served from our own website, so no font requests go to Google or other third parties.</li>
+</ul>
+<h2 id="en-children">13. Children</h2>
+<p>Our services are for businesses and are not aimed at anyone under 18. We don't knowingly collect personal data from children. If you think a child has contacted us, please let us know and we'll delete their data.</p>
+<h2 id="en-changes-to-this-notice">14. Changes to this notice</h2>
+<p>We may update this notice when our tools or services change. We'll change the "Last updated" date at the top and, if the change is significant, tell you where we reasonably can.</p>
+<h2 id="en-contact-us">15. Contact us</h2>
+<p>Questions, requests or complaints about your personal data:</p>
+<p><strong>MageWorks AI Solutions</strong><br />
+Malaysia (full business address to follow once registration is complete)<br />
+Email: info@mageworks.ai<br />
+Data protection contact: Chee Loung, Founder</p>
+</article>
+</main>
+
+<footer class="site-foot">
+  <div class="site-foot-inner">
+    <span>&copy; 2026 MageWorks AI Solutions</span>
+    <span><a href="mailto:info@mageworks.ai">info@mageworks.ai</a> &middot; <a href="#en" lang="en">Privacy Notice</a> &middot; <a href="#bm" lang="ms">Notis Privasi</a></span>
+  </div>
+</footer>
+</body>
+</html>

@@ -235,7 +235,7 @@
   label.check em { font-style: normal; opacity: .75; }
   .consent { font-size: 13px; color: var(--ink-2); line-height: 1.55; margin: 2px 0 4px; }
   .consent a { color: var(--ink); }
-  .h-captcha { min-height: 78px; }
+  .h-captcha { min-height: 78px; justify-self: start; width: max-content; max-width: 100%; }
   #sendBtn { position: relative; justify-content: center; overflow: hidden; transition: background .35s, border-color .35s, transform .2s; }
   #sendBtn[disabled] { cursor: wait; }
   #sendBtn .lbl, #sendBtn .arr { display: inline-block; transition: transform .55s cubic-bezier(.6,0,.3,1), opacity .4s; }
@@ -248,7 +248,7 @@
   #sendBtn.sent .done { transform: none; }
   .shake { animation: shake .45s cubic-bezier(.36,.07,.19,.97); }
   @keyframes shake { 10%, 90% { transform: translateX(-2px); } 20%, 80% { transform: translateX(4px); } 30%, 50%, 70% { transform: translateX(-8px); } 40%, 60% { transform: translateX(8px); } }
-  .h-captcha.need { outline: 2px solid #c7655a; outline-offset: 4px; border-radius: 6px; }
+  .h-captcha.captcha-missing { outline: 2px solid #c7655a; outline-offset: 4px; border-radius: 6px; }
   @media (prefers-reduced-motion: reduce) { .shake, #sendBtn.sending .arr { animation: none; } #sendBtn .lbl, #sendBtn .arr, #sendBtn .done { transition: none; } }
   input[aria-invalid="true"], textarea[aria-invalid="true"] { border-color: #c7655a; }
   footer { background: var(--coral); padding: 28px 0 40px; font-size: 14px; color: var(--ink); }
@@ -651,8 +651,8 @@
     const data = new FormData(form);
     if (data.get('access_key') === 'REPLACE_WITH_WEB3FORMS_ACCESS_KEY') { say('The form isn\'t connected yet. Please email info@mageworks.ai for now.', 'err'); return; }
     const cap = form.querySelector('.h-captcha');
-    if (!data.get('h-captcha-response')) { say('Please complete the "I am human" check above the Send button.', 'err'); cap.classList.add('need'); shake(cap); shake(sendBtn); return; }
-    cap.classList.remove('need');
+    if (!data.get('h-captcha-response')) { say('Please complete the "I am human" check above the Send button.', 'err'); cap.classList.add('captcha-missing'); shake(cap); shake(sendBtn); return; }
+    cap.classList.remove('captcha-missing');
     sendBtn.disabled = true; sendBtn.classList.add('sending'); say('Sending…');
     try {
       const res = await fetch('https://api.web3forms.com/submit', { method: 'POST', headers: { Accept: 'application/json' }, body: data });

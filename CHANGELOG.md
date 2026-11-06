@@ -3,7 +3,7 @@
 ## 2026-11-06: Founder photo
 - About section: real photo of Chee Loung (cropped 4:5, 960×1200, WebP 34 KB with JPEG fallback, no metadata), softly toned to the dusk palette.
 - Founder photo replaced with a transparent cut-out (cropped below the hands, 280px wide, WebP 68 KB). No frame or wash. Removed the temporary `?photo=dots` switch and the unused `chee-loung-dots.webp` / `chee-loung.jpg`.
-- About: last line changed to "When I'm not untangling workflows, I'm probably stuck in the mountain thinking about life."
+- About: last line changed to "When I'm not untangling workflows, I'm probably up a mountain, debugging life."
 
 ## 2026-11-06: Privacy notice provider updates
 - Removed Cal.com (not in use for now): provider table, booking section, retention and deletion steps; the assistant now "suggests a call" and we arrange the time.

@@ -1,6 +1,6 @@
 # mageworks-site
 
-Public website for **Mageworks.ai** (MageWorks AI Solutions), hosted on Cloudflare Pages.
+Public website for **MageWorks AI** (MageWorks AI Solutions), hosted on Cloudflare Pages.
 
 - `main` = what's live on mageworks.ai
 - Other branches get their own Cloudflare preview URL. Review there before merging.

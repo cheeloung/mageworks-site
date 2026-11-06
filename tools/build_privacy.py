@@ -63,7 +63,7 @@ page = f"""<!doctype html>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Privacy Notice | MageWorks</title>
+<title>Privacy Notice | MageWorks AI</title>
 <meta name="description" content="How MageWorks AI Solutions handles personal data from website visitors, enquiries and our WhatsApp AI Enquiry Assistant, and how to delete your data.">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://mageworks.ai/privacy">
@@ -176,7 +176,7 @@ tr:last-child td {{ border-bottom: 0; }}
 <a class="skip" href="#main">Skip to content</a>
 <header class="topbar">
   <div class="topbar-inner">
-    <a class="brand" href="/" aria-label="mageworks.ai home">
+    <a class="brand" href="/" aria-label="MageWorks AI home">
       <svg viewBox="0 0 104 40" width="44" height="17" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"><path d="M2 38 L13 4 L24 26 L35 4 L46 38"/><path d="M58 2 L69 36 L80 14 L91 36 L102 2"/></g></svg>
       <span>mageworks.ai</span>
     </a>

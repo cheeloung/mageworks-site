@@ -1,5 +1,9 @@
 # Changelog
 
+## 2026-11-07: Brand name and search structured data
+- Brand name on the site is now **MageWorks AI** (was "Mageworks.ai"): homepage title, link-preview site name and title, About intro, photo alt text, 404 and Privacy page titles, logo link labels. The domain stays mageworks.ai; the footer keeps the registered name MageWorks AI Solutions.
+- Homepage: added JSON-LD structured data (WebSite + Organization) so Google shows the right site name and logo. Alternate names: mageworks.ai, MageWorks AI Solutions.
+
 ## 2026-11-06: Founder photo
 - About section: real photo of Chee Loung (cropped 4:5, 960×1200, WebP 34 KB with JPEG fallback, no metadata), softly toned to the dusk palette.
 - Founder photo replaced with a transparent cut-out (cropped below the hands, 280px wide, WebP 68 KB). No frame or wash. Removed the temporary `?photo=dots` switch and the unused `chee-loung-dots.webp` / `chee-loung.jpg`.

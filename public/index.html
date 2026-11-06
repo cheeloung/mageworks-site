@@ -641,7 +641,7 @@
 
   // hCaptcha is only loaded when the visitor gets near the form, so most page views contact no third party at all
   let capLoaded = false;
-  const loadCaptcha = () => { if (capLoaded) return; capLoaded = true; const sc = document.createElement('script'); sc.src = 'https://js.hcaptcha.com/1/api.js?recaptchacompat=off';   // Web3Forms requires compat mode off sc.async = true; sc.defer = true; document.head.appendChild(sc); };
+  const loadCaptcha = () => { if (capLoaded) return; capLoaded = true; const sc = document.createElement('script'); sc.src = 'https://js.hcaptcha.com/1/api.js?recaptchacompat=off'; /* Web3Forms requires compat mode off */ sc.async = true; sc.defer = true; document.head.appendChild(sc); };
   new IntersectionObserver((es, o) => { if (es[0].isIntersecting) { loadCaptcha(); o.disconnect(); } }, { rootMargin: '600px 0px' }).observe(document.getElementById('form'));
   document.getElementById('form').addEventListener('focusin', loadCaptcha, { once: true });
 

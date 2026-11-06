@@ -15,7 +15,7 @@ One-time setup. Takes about 20 minutes. Domain DNS is already on Cloudflare.
 
 `main` only has the README until the first version is approved and merged, so the very first production deploy may be empty. That's expected.
 
-Every other branch (e.g. `site-v1`) gets its own **preview URL** like `https://site-v1.mageworks.pages.dev`. Find it under the project → **Deployments**. Review there before anything is merged to `main`.
+Every other branch (e.g. `site-v1`) gets its own **preview URL** like `https://site-v1.mageworks-site.pages.dev`. Find it under the project → **Deployments**. Review there before anything is merged to `main`.
 
 ## 2. Web3Forms (enquiry form)
 

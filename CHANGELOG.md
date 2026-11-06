@@ -1,5 +1,12 @@
 # Changelog
 
+## 2026-11-06: Security and performance review fixes
+- Performance: the hero animation pauses when it's off screen (it was redrawing constantly) and runs at about 20 fps; the mountain only rebuilds when the size actually changes.
+- Privacy/security: hCaptcha now loads from hCaptcha directly (no web3forms.com script) and only when the visitor nears the form, so most page views contact no third party.
+- Headers: Content-Security-Policy (only our own site, hCaptcha and Web3Forms allowed), HSTS, frame-ancestors 'none' / X-Frame-Options DENY.
+- Removed an internal note from the page source.
+- Fix: captcha box no longer grows on error (class name clash).
+
 ## 2026-11-06: Design changes on site-v1
 - Hero lighting: warm sun glow from the top-left and a diagonal sky gradient; the mountain's left slopes catch warm light while the right side stays in shadow.
 - Form: missing fields or captcha make the fields, captcha and Send button shake, with a red highlight.

@@ -425,7 +425,6 @@
       <p class="intro" style="margin-top:22px">Prefer email? Write to <a href="mailto:info@mageworks.ai">info@mageworks.ai</a>.</p>
     </div>
     <form class="reveal" id="form" action="https://api.web3forms.com/submit" method="POST" novalidate>
-      <!-- Web3Forms access key (safe to be public; it only lets this form send to Chee Loung's inbox) -->
       <input type="hidden" name="access_key" value="04e6d612-0693-4b5a-bde7-2e538f9eeb16">
       <input type="hidden" name="subject" value="New enquiry from mageworks.ai">
       <input type="hidden" name="from_name" value="mageworks.ai website">
@@ -435,7 +434,7 @@
       <label>Email <input required type="email" name="email" autocomplete="email" maxlength="200"></label>
       <label>What's eating your week? <textarea required name="message" maxlength="4000" placeholder="Tell us about the task, not the people. Please don't include sensitive personal details."></textarea></label>
       <label class="check"><input type="checkbox" name="marketing_opt_in" value="yes"> <span>Also send me occasional emails with practical AI tips and workshop invites. I can unsubscribe at any time. <em>(optional)</em></span></label>
-      <div class="h-captcha" data-captcha="true"></div>
+      <div class="h-captcha" data-sitekey="50b2fe65-b00b-4b9e-ad62-3ba471098be2"></div>
       <p class="consent">We'll use your details only to reply to your enquiry and follow up about it. Name, email and message are required so we can get back to you. See our <a href="/privacy">Privacy Notice</a> for how we handle your data and your rights. <span lang="ms">Baca <a href="/privacy#bm">Notis Privasi dalam Bahasa Malaysia</a>.</span></p>
       <button class="btn dark" type="submit" id="sendBtn"><span class="lbl">Send</span> <span class="arr" aria-hidden="true">→</span><span class="done" aria-hidden="true">Sent ✓</span></button>
       <p class="form-note" id="note" role="status" aria-live="polite"></p>
@@ -588,11 +587,15 @@
     }
   }
 
-  let last = 0;
+  // Animate only while the clouds are on screen (saves battery), at about 20 frames per second
+  let last = 0, heroVisible = true, looping = false;
   function loop(ts) {
-    if (ts - last > 40) { t = ts / 1000; draw(); last = ts; }
+    if (!heroVisible) { looping = false; return; }
+    if (ts - last > 50) { t = ts / 1000; draw(); last = ts; }
     requestAnimationFrame(loop);
   }
+  function startLoop() { if (!reduce && !looping && heroVisible) { looping = true; requestAnimationFrame(loop); } }
+  new IntersectionObserver(es => { heroVisible = es[0].isIntersecting; startLoop(); }).observe(cv);
 
   // ---------- Scroll effects ----------
   const hint = document.getElementById('hint'), heroCopy = document.getElementById('heroCopy'), top = document.getElementById('top'), side = document.getElementById('side'), prog = document.getElementById('progress');
@@ -609,10 +612,15 @@
     if (reduce) draw();
   }
   addEventListener('scroll', onScroll, { passive: true });
-  addEventListener('resize', resize);
+  let lastSize = '';
+  addEventListener('resize', () => {
+    const size = hero.clientWidth + 'x' + hero.clientHeight;
+    if (size === lastSize) return;
+    lastSize = size; clearTimeout(resize._t); resize._t = setTimeout(resize, 120);
+  });
   resize(); onScroll();
   if (document.fonts && document.fonts.ready) document.fonts.ready.then(() => { alignHero(); buildMountain(); draw(); });
-  if (!reduce) requestAnimationFrame(loop);
+  startLoop();
 
   // Roadmap details: tap to open on touch / narrow screens
   document.querySelectorAll('.step').forEach(st => st.addEventListener('click', () => {
@@ -630,6 +638,12 @@
   // Reveal
   const rio = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); rio.unobserve(e.target); } }), { threshold: 0.15 });
   document.querySelectorAll('.reveal').forEach((el, i) => { el.style.transitionDelay = (i % 4) * 80 + 'ms'; rio.observe(el); });
+
+  // hCaptcha is only loaded when the visitor gets near the form, so most page views contact no third party at all
+  let capLoaded = false;
+  const loadCaptcha = () => { if (capLoaded) return; capLoaded = true; const sc = document.createElement('script'); sc.src = 'https://js.hcaptcha.com/1/api.js'; sc.async = true; sc.defer = true; document.head.appendChild(sc); };
+  new IntersectionObserver((es, o) => { if (es[0].isIntersecting) { loadCaptcha(); o.disconnect(); } }, { rootMargin: '600px 0px' }).observe(document.getElementById('form'));
+  document.getElementById('form').addEventListener('focusin', loadCaptcha, { once: true });
 
   // Enquiry form: Web3Forms + hCaptcha, submitted in the background so the page stays put
   const form = document.getElementById('form'), note = document.getElementById('note'), sendBtn = document.getElementById('sendBtn');
@@ -672,6 +686,5 @@
   });
 })();
 </script>
-<script src="https://web3forms.com/client/script.js" async defer></script>
 </body>
 </html>

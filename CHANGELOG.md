@@ -1,5 +1,9 @@
 # Changelog
 
+## 2026-11-06: Founder photo
+- About section: real photo of Chee Loung (cropped 4:5, 960×1200, WebP 34 KB with JPEG fallback, no metadata), softly toned to the dusk palette.
+- Halftone version prepared (`chee-loung-dots.webp`). TEMPORARY: `?photo=dots` shows it for comparison; remove the switch and the unused file once one is chosen.
+
 ## 2026-11-06: Privacy notice provider updates
 - Removed Cal.com (not in use for now): provider table, booking section, retention and deletion steps; the assistant now "suggests a call" and we arrange the time.
 - Email: Google Workspace (Gmail) now named as our email host, including info@mageworks.ai; the generic "our email provider" row and Cloudflare email forwarding mention removed.

@@ -677,7 +677,8 @@
         setTimeout(() => sendBtn.classList.remove('sent'), 5000);
         say('Thanks, your message is on its way. Chee Loung will get back to you, usually within one working day.', 'ok');
       } else {
-        say('Sorry, that didn\'t go through. Please try again, or email info@mageworks.ai.', 'err'); shake(sendBtn);
+        console.warn('Web3Forms:', res.status, out && out.message);
+        say('Sorry, that didn\'t go through. Please try again, or email info@mageworks.ai.' + (out && out.message ? ' (' + String(out.message).trim().slice(0, 120) + ')' : ''), 'err'); shake(sendBtn);
         if (window.hcaptcha) try { hcaptcha.reset(); } catch (_) {}
       }
     } catch (_) {

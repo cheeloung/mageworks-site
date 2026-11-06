@@ -490,13 +490,32 @@
     return m;
   }
 
+  // Cast shadow: march from each point towards the sun (top-left). If the mountain is in the way, the point is in shadow.
+  // Three slightly different angles give a soft edge; the shadow weakens with distance from the mountain.
+  function castShadow(x, y, ridgeAt) {
+    const maxD = W * 0.45, step = Math.max(4, S * 0.8);
+    let total = 0;
+    for (const [dx, dy] of [[-0.88, -0.47], [-0.86, -0.51], [-0.84, -0.55]]) {
+      for (let d = step; d < maxD; d += step) {
+        const sx = x + dx * d, sy = y + dy * d;
+        if (sx < 0 || sy < 0) break;
+        if (sy > ridgeAt(sx)) { total += 1 - 0.65 * (d / maxD); break; }
+      }
+    }
+    return total / 3;
+  }
+
   function buildMountain() {
     cells = [];
     const zones = textZone();
+    const rx = new Float32Array(Math.ceil(W) + 2);                  // ridge height per pixel column (fast lookup)
+    for (let i = 0; i < rx.length; i++) rx[i] = ridge(i);
+    const ridgeAt = x => rx[Math.max(0, Math.min(rx.length - 1, Math.round(x)))];
     for (let gy = S / 2; gy < CH; gy += S) {
       for (let gx = S / 2; gx < W; gx += S) {
         const r0 = ridge(gx);
-        if (gy < r0) { cells.push({ x: gx, y: gy, sky: true }); continue; }
+        const fadeOut = Math.max(0, Math.min(1, (H * 0.97 - gy) / (H * 0.18)));   // no shadow near the bottom, so the seam stays clean
+        if (gy < r0) { cells.push({ x: gx, y: gy, sky: true, sh: castShadow(gx, gy, ridgeAt) * fadeOut }); continue; }
         const depth = Math.min(1, (gy - r0) / (H * 0.28));
         const slope = (ridgeBase(gx + 6) - ridgeBase(gx - 6)) / 12;           // smooth: + means right-hand (shadow) face
         // Light comes from the top-left: left-facing slopes catch it, right-facing slopes and the lower-right fall into shadow
@@ -557,7 +576,9 @@
       } else if (k > 0.22) {
         if (!c.sky && k < 0.6) { const f = 1 - k / 0.6; ctx.fillStyle = `rgba(${c.col},${c.a * f})`; ctx.beginPath(); ctx.arc(c.x, c.y, c.r * f, 0, 7); ctx.fill(); }
         // dots swell as the cloud thickens, so the edge of the bank is soft and organic
-        ctx.fillStyle = `rgba(251,246,239,${0.6 + k * 0.4})`;
+        const thin = 1 - (k - 0.22) / 0.68;                       // 1 = wispy cloud top, 0 = dense cloud bank
+        const sh = (c.sh || 0) * thin * thin;                      // shadow shows on the cloud tops and melts into the bank
+        ctx.fillStyle = sh > 0.01 ? `rgba(${Math.round(251 - 64 * sh)},${Math.round(246 - 66 * sh)},${Math.round(239 - 36 * sh)},${0.6 + k * 0.4})` : `rgba(251,246,239,${0.6 + k * 0.4})`;
         ctx.beginPath(); ctx.arc(c.x, c.y, S * (0.42 + 0.4 * (k - 0.22)), 0, 7); ctx.fill();
       } else if (c.sky) {
         ctx.fillStyle = 'rgba(255,255,255,0.3)'; ctx.beginPath(); ctx.arc(c.x, c.y, S * 0.09, 0, 7); ctx.fill();

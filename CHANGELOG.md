@@ -5,6 +5,7 @@
 - Form: missing fields or captcha make the fields, captcha and Send button shake, with a red highlight.
 - Send button: text centred with an arrow; while sending the arrow nudges, and on success the text slides out to the right and a green "Sent ✓" slides in.
 - Link-preview image refreshed with the new lighting.
+- Cast shadow: the mountain throws a soft lavender shadow across the cloud tops towards the bottom-right, away from the top-left sun. It fades into the dense cloud bank so there are no hard edges.
 
 ## 2026-11-06: Site v1 (branch `site-v1`)
 - Homepage from the approved "Above the Clouds" concept: self-hosted fonts, SEO and link-preview tags, icons, WhatsApp buttons removed for now.

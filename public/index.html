@@ -78,7 +78,7 @@
   .progress { position: fixed; top: 0; left: 0; height: 3px; background: var(--accent); z-index: 30; width: 0; }
 
   /* Hero */
-  .hero { position: relative; z-index: 2; height: 100vh; min-height: 640px; overflow: visible; background: linear-gradient(180deg, var(--peach) 0%, #f5bfa6 30%, var(--coral) 52%, var(--lav) 74%, var(--mist) 100%); }
+  .hero { position: relative; z-index: 2; height: 100vh; min-height: 640px; overflow: visible; background: radial-gradient(ellipse 70% 60% at 0% 0%, rgba(255,240,214,.95) 0%, rgba(255,226,196,.55) 35%, rgba(255,226,196,0) 70%), linear-gradient(162deg, #f9dcbc 0%, var(--peach) 22%, #f5bfa6 42%, var(--coral) 60%, var(--lav) 80%, var(--mist) 100%); }
   .hero canvas { position: absolute; left: 0; top: 0; width: 100%; pointer-events: none; }
   .hero-copy { position: relative; z-index: 3; padding-top: 112px; will-change: transform, opacity; }
   .eyebrow { font-size: 13px; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-2); margin-bottom: 16px; }
@@ -236,7 +236,20 @@
   .consent { font-size: 13px; color: var(--ink-2); line-height: 1.55; margin: 2px 0 4px; }
   .consent a { color: var(--ink); }
   .h-captcha { min-height: 78px; }
-  #sendBtn[disabled] { opacity: .6; cursor: wait; }
+  #sendBtn { position: relative; justify-content: center; overflow: hidden; transition: background .35s, border-color .35s, transform .2s; }
+  #sendBtn[disabled] { cursor: wait; }
+  #sendBtn .lbl, #sendBtn .arr { display: inline-block; transition: transform .55s cubic-bezier(.6,0,.3,1), opacity .4s; }
+  #sendBtn:hover:not([disabled]) .arr { transform: translateX(4px); }
+  #sendBtn.sending .arr { animation: nudge .9s ease-in-out infinite; }
+  @keyframes nudge { 0%, 100% { transform: translateX(0); } 50% { transform: translateX(7px); } }
+  #sendBtn .done { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; gap: 8px; transform: translateX(-105%); transition: transform .55s cubic-bezier(.3,0,.2,1) .2s; }
+  #sendBtn.sent { background: #3f6b34; border-color: #3f6b34; }
+  #sendBtn.sent .lbl, #sendBtn.sent .arr { transform: translateX(420px); opacity: 0; }
+  #sendBtn.sent .done { transform: none; }
+  .shake { animation: shake .45s cubic-bezier(.36,.07,.19,.97); }
+  @keyframes shake { 10%, 90% { transform: translateX(-2px); } 20%, 80% { transform: translateX(4px); } 30%, 50%, 70% { transform: translateX(-8px); } 40%, 60% { transform: translateX(8px); } }
+  .h-captcha.need { outline: 2px solid #c7655a; outline-offset: 4px; border-radius: 6px; }
+  @media (prefers-reduced-motion: reduce) { .shake, #sendBtn.sending .arr { animation: none; } #sendBtn .lbl, #sendBtn .arr, #sendBtn .done { transition: none; } }
   input[aria-invalid="true"], textarea[aria-invalid="true"] { border-color: #c7655a; }
   footer { background: var(--coral); padding: 28px 0 40px; font-size: 14px; color: var(--ink); }
   footer .wrap { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
@@ -424,7 +437,7 @@
       <label class="check"><input type="checkbox" name="marketing_opt_in" value="yes"> <span>Also send me occasional emails with practical AI tips and workshop invites. I can unsubscribe at any time. <em>(optional)</em></span></label>
       <div class="h-captcha" data-captcha="true"></div>
       <p class="consent">We'll use your details only to reply to your enquiry and follow up about it. Name, email and message are required so we can get back to you. See our <a href="/privacy">Privacy Notice</a> for how we handle your data and your rights. <span lang="ms">Baca <a href="/privacy#bm">Notis Privasi dalam Bahasa Malaysia</a>.</span></p>
-      <button class="btn dark" type="submit" id="sendBtn">Send</button>
+      <button class="btn dark" type="submit" id="sendBtn"><span class="lbl">Send</span> <span class="arr" aria-hidden="true">→</span><span class="done" aria-hidden="true">Sent ✓</span></button>
       <p class="form-note" id="note" role="status" aria-live="polite"></p>
     </form>
   </div>
@@ -486,10 +499,13 @@
         if (gy < r0) { cells.push({ x: gx, y: gy, sky: true }); continue; }
         const depth = Math.min(1, (gy - r0) / (H * 0.28));
         const slope = (ridgeBase(gx + 6) - ridgeBase(gx - 6)) / 12;           // smooth: + means right-hand (shadow) face
-        let v = 0.32 + depth * 0.3 + Math.max(-0.16, Math.min(0.3, slope * 0.9)) + (fbm(gx * 0.025, gy * 0.025) - 0.5) * 0.3;
+        // Light comes from the top-left: left-facing slopes catch it, right-facing slopes and the lower-right fall into shadow
+        let v = 0.32 + depth * 0.3 + Math.max(-0.16, Math.min(0.3, slope * 0.9)) + (fbm(gx * 0.025, gy * 0.025) - 0.5) * 0.3 + 0.1 * (gx / W - 0.5);
         v = Math.max(0.1, Math.min(1, v));
         const mist = mistAt(gx, gy, zones);
-        cells.push({ x: gx, y: gy, r: S * 0.5 * Math.sqrt(v) * (1 - 0.55 * mist), a: (0.5 + v * 0.5) * (1 - 0.82 * mist) });
+        const lit = Math.max(0, Math.min(1, -slope * 1.6 + 0.15)) * (1 - depth * 0.75);   // 0 = shadow, 1 = sunlit
+        const col = [Math.round(52 + (176 - 52) * lit), Math.round(40 + (98 - 40) * lit), Math.round(64 + (96 - 64) * lit)].join(',');
+        cells.push({ x: gx, y: gy, r: S * 0.5 * Math.sqrt(v) * (1 - 0.55 * mist), a: (0.5 + v * 0.5) * (1 - 0.82 * mist), col });
       }
     }
   }
@@ -539,14 +555,14 @@
         // inside the cloud bank: solid cream, matching the next section's background
         ctx.fillStyle = CREAM; ctx.fillRect(c.x - S / 2 - 0.5, c.y - S / 2 - 0.5, S + 1, S + 1);
       } else if (k > 0.22) {
-        if (!c.sky && k < 0.6) { const f = 1 - k / 0.6; ctx.fillStyle = `rgba(52,40,64,${c.a * f})`; ctx.beginPath(); ctx.arc(c.x, c.y, c.r * f, 0, 7); ctx.fill(); }
+        if (!c.sky && k < 0.6) { const f = 1 - k / 0.6; ctx.fillStyle = `rgba(${c.col},${c.a * f})`; ctx.beginPath(); ctx.arc(c.x, c.y, c.r * f, 0, 7); ctx.fill(); }
         // dots swell as the cloud thickens, so the edge of the bank is soft and organic
         ctx.fillStyle = `rgba(251,246,239,${0.6 + k * 0.4})`;
         ctx.beginPath(); ctx.arc(c.x, c.y, S * (0.42 + 0.4 * (k - 0.22)), 0, 7); ctx.fill();
       } else if (c.sky) {
         ctx.fillStyle = 'rgba(255,255,255,0.3)'; ctx.beginPath(); ctx.arc(c.x, c.y, S * 0.09, 0, 7); ctx.fill();
       } else {
-        ctx.fillStyle = `rgba(52,40,64,${c.a})`; ctx.beginPath(); ctx.arc(c.x, c.y, c.r, 0, 7); ctx.fill();
+        ctx.fillStyle = `rgba(${c.col},${c.a})`; ctx.beginPath(); ctx.arc(c.x, c.y, c.r, 0, 7); ctx.fill();
       }
     }
   }
@@ -597,6 +613,8 @@
   // Enquiry form: Web3Forms + hCaptcha, submitted in the background so the page stays put
   const form = document.getElementById('form'), note = document.getElementById('note'), sendBtn = document.getElementById('sendBtn');
   const say = (msg, cls) => { note.textContent = msg; note.className = 'form-note' + (cls ? ' ' + cls : ''); };
+  const shake = el => { el.classList.remove('shake'); void el.offsetWidth; el.classList.add('shake'); el.addEventListener('animationend', () => el.classList.remove('shake'), { once: true }); };
+  form.querySelectorAll('[required]').forEach(el => el.addEventListener('input', () => el.setAttribute('aria-invalid', 'false')));
   form.addEventListener('submit', async e => {
     e.preventDefault();
     let firstBad = null;
@@ -605,24 +623,31 @@
       el.setAttribute('aria-invalid', bad ? 'true' : 'false');
       if (bad && !firstBad) firstBad = el;
     });
-    if (firstBad) { say('Please fill in your name, a valid email and your message.', 'err'); firstBad.focus(); return; }
+    if (firstBad) {
+      say('Please fill in your name, a valid email and your message.', 'err');
+      form.querySelectorAll('[aria-invalid="true"]').forEach(shake); shake(sendBtn); firstBad.focus(); return;
+    }
     const data = new FormData(form);
     if (data.get('access_key') === 'REPLACE_WITH_WEB3FORMS_ACCESS_KEY') { say('The form isn\'t connected yet. Please email info@mageworks.ai for now.', 'err'); return; }
-    if (!data.get('h-captcha-response')) { say('Please complete the "I am human" check above the Send button.', 'err'); return; }
-    sendBtn.disabled = true; say('Sending…');
+    const cap = form.querySelector('.h-captcha');
+    if (!data.get('h-captcha-response')) { say('Please complete the "I am human" check above the Send button.', 'err'); cap.classList.add('need'); shake(cap); shake(sendBtn); return; }
+    cap.classList.remove('need');
+    sendBtn.disabled = true; sendBtn.classList.add('sending'); say('Sending…');
     try {
       const res = await fetch('https://api.web3forms.com/submit', { method: 'POST', headers: { Accept: 'application/json' }, body: data });
       const out = await res.json().catch(() => ({}));
       if (res.ok && out.success) {
         form.reset(); if (window.hcaptcha) try { hcaptcha.reset(); } catch (_) {}
+        sendBtn.classList.remove('sending'); sendBtn.classList.add('sent');
+        setTimeout(() => sendBtn.classList.remove('sent'), 5000);
         say('Thanks, your message is on its way. Chee Loung will get back to you, usually within one working day.', 'ok');
       } else {
-        say('Sorry, that didn\'t go through. Please try again, or email info@mageworks.ai.', 'err');
+        say('Sorry, that didn\'t go through. Please try again, or email info@mageworks.ai.', 'err'); shake(sendBtn);
         if (window.hcaptcha) try { hcaptcha.reset(); } catch (_) {}
       }
     } catch (_) {
       say('Sorry, that didn\'t go through. Please check your connection, or email info@mageworks.ai.', 'err');
-    } finally { sendBtn.disabled = false; }
+    } finally { sendBtn.disabled = false; sendBtn.classList.remove('sending'); }
   });
 })();
 </script>
